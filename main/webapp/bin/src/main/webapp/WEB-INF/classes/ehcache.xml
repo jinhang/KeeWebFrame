@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ehcache name="kcb">
+  <defaultCache
+      maxElementsInMemory="10000"
+      eternal="false"
+      overflowToDisk="true"
+      diskSpoolBufferSizeMB="300"
+      maxElementsOnDisk="10000000"
+      diskPersistent="false"
+      diskExpiryThreadIntervalSeconds="120"
+      memoryStoreEvictionPolicy="LRU"/>
+   <cache name="kcb"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="1000"
+           eternal="true"
+           diskSpoolBufferSizeMB="200"
+           memoryStoreEvictionPolicy="LFU">
+       <terracotta/>
+    </cache>
+    <terracottaConfig url="192.168.1.252:9510"/>
+</ehcache>

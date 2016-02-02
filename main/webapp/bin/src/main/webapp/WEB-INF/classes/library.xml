@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.4.0.xsd">
+  <!-- Configure the database connection here -->
+  <jdbc>
+    <driver>org.postgresql.Driver</driver>
+    <url>jdbc:postgresql://192.168.1.157:5432/hf_kcb_20140926</url>
+    <user>root</user>
+    <password>123456</password>
+  </jdbc>
+
+  <generator>
+    <!-- The default code generator. You can override this one, to generate your own code style
+         Defaults to org.jooq.util.DefaultGenerator -->
+    <name>org.jooq.util.DefaultGenerator</name>
+
+    <database>
+      <!-- The database type. The format here is:
+           org.util.[database].[database]Database -->
+      <name>org.jooq.util.postgres.PostgresDatabase</name>
+
+      <!-- The database schema (or in the absence of schema support, in your RDBMS this
+           can be the owner, user, database name) to be generated -->
+      <inputSchema>public</inputSchema>
+      
+
+      <!-- All elements that are generated from your schema
+           (A Java regular expression. Use the pipe to separate several expressions)
+           Watch out for case-sensitivity. Depending on your database, this might be important! -->
+      <includes>.*</includes>
+
+      <!-- All elements that are excluded from your schema
+           (A Java regular expression. Use the pipe to separate several expressions).
+           Excludes match before includes -->
+      <excludes>(express|outstock)_.*</excludes>
+    </database>
+
+    <target>
+      <!-- The destination package of your generated classes (within the destination directory) -->
+      <packageName>com.wfs.model</packageName>
+
+      <!-- The destination directory of your generated classes -->
+      <directory>E:/CODE</directory>
+    </target>
+    <generate>
+		<!-- Generate POJOs in addition to Record classes for usage of the
+			ResultQuery.fetchInto(Class) API
+			Defaults to false -->
+		<pojos>true</pojos>
+		<!-- Generate DAOs in addition to POJO classes
+			Defaults to false -->
+		<daos>false</daos>
+		<!-- Annotate POJOs and Records with JPA annotations for increased
+			compatibility and better integration with JPA/Hibernate, etc
+			Defaults to false -->
+		<jpaAnnotations>false</jpaAnnotations>
+    </generate>
+  </generator>
+</configuration>

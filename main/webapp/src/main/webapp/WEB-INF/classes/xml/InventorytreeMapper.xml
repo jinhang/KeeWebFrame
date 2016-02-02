@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN"
+                           "http://castor.org/mapping.dtd">
+<mapping>
+	<class name="com.kcb.common.dhtmlx.Rows">
+		<map-to xml="rows"/>
+		<field name="row" type="com.kcb.model.InventoryApp" collection="arraylist">
+			<bind-xml name="row" />
+		</field>
+	</class>
+	<class name="com.kcb.model.InventoryApp">
+		<field name="inventoryappid" type="java.lang.String">
+			<bind-xml name="inventoryapp.id"/>
+		</field>
+		<field name="style" type="java.lang.Integer">
+			<bind-xml name="inventoryapp.style" />
+		</field>
+		<field name="createtime" type="java.util.Date">
+			<bind-xml name="inventoryapp.createtime" />
+		</field>
+		<field name="status" type="java.lang.Integer">
+			<bind-xml name="inventoryapp.status" />
+		</field>
+		<field name="creator" type="java.lang.String">
+			<bind-xml name="inventoryapp.creator" />
+		</field>
+		<field name="clientid" type="java.lang.String">
+			<bind-xml name="inventoryapp.clientid" />
+		</field>
+		<field name="memo" type="java.lang.String">
+			<bind-xml name="inventoryapp.memo" />
+		</field>
+	</class>
+</mapping>
+

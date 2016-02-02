@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+           http://www.springframework.org/schema/mvc
+        	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">     
+		<import resource="jooq-spring-postgres.xml"/>
+
+
+	 <bean id="propertyConfigurer_qyb"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+		<!-- PostGresql Cluster -->
+		<bean id="JCluster" class="com.wfs.dialect.Cluster">
+			<property name="cluster">
+				<map>
+					<entry key="default">
+						<bean class="com.wfs.dialect.jooq.cluster.JClient">
+							<property name="context" ref="dsl" />
+							<property name="transactionManager" ref="transactionManager" />
+						</bean>
+					</entry>
+				</map>
+			</property>
+		</bean>
+
+		<!-- TokuMX Cluster-->
+		<bean id="MCluster" class="com.wfs.dialect.Cluster">
+			<property name="cluster">
+				<map>
+					<entry key="default">
+						<bean class="com.wfs.dialect.mongo.MClient">
+							<property name="url" value="192.168.1.157" />
+							<property name="dbname" value="mydb" />
+						</bean>
+					</entry>
+				</map>
+			</property>
+		</bean> 
+		
+		<!-- Redis Cluster-->
+		<bean id="RCluster" class="com.wfs.dialect.Cluster">
+			<property name="cluster">
+				<map>
+					<entry key="default">
+						<bean class="com.wfs.dialect.redis.RClient">
+							<property name="url" value="${redis_url}" />
+						</bean>
+					</entry>
+				</map>
+			</property>
+		</bean> 
+		
+		<!-- JRedis Cluster-->
+		<bean id="JRCluster" class="com.wfs.dialect.Cluster">
+			<property name="cluster">
+				<map>
+					<entry key="default">
+						<bean class="com.wfs.dialect.redis.JRClient">
+							<property name="url" value="${redis_ip}" />
+							<property name="port" value="${redis_port}" />
+						</bean>
+					</entry>
+				</map>
+			</property>
+		</bean> 
+		<bean id="node1" class="com.wfs.engine.node.Node">
+			<property name="type" value="1"/>
+			<property name="name" value="node1"/>
+			<property name="clusterNode">
+				<map>
+					<entry key="node2" value="node2"/>
+				</map>			
+			</property>
+		</bean>
+		
+		<bean id="EngineConfig" class="com.wfs.engine.EngineConfig">
+			<property name="serverName" value="localhost"/>
+			<property name="node" ref="node1"/>
+			<property name="queueSize" value="100000"/>
+			<property name="corePoolSize" value="100"/>
+			<property name="maximumPoolSize" value="1000"/>
+			
+			<property name="serializer_class" value="com.wfs.engine.kafka.KafkaSerializer"/>
+			<property name="broker_list" value="localhost:9092"/>
+			<property name="zookeeper_connect" value="localhost:2181"/>
+			<property name="group_id" value="kcb"/>
+			<property name="message_max_bytes" value="104857600"/>	
+			<property name="producer_type" value="async"/>
+			<property name="queue_buffering_max_ms" value="1"/>
+			<property name="max_message_size" value="104857600"/>
+			<property name="zookeeper_session_timeout_ms" value="100"/>
+			<property name="zookeeper_sync_time_ms" value="1"/>
+			<property name="auto_commit_interval_ms" value="1"/>
+		</bean>
+		<!-- Engine Config -->
+		<bean id="node2" class="com.wfs.engine.node.Node">
+			<property name="type" value="1"/>
+			<property name="name" value="node2"/>
+		</bean>		
+
+
+		<bean id="EngineConfig2" class="com.wfs.engine.EngineConfig">
+			<property name="serverName" value="localhost"/>
+			<property name="node" ref="node2"/>
+			<property name="queueSize" value="100000"/>
+			<property name="corePoolSize" value="100"/>
+			<property name="maximumPoolSize" value="1000"/>
+			
+			<property name="serializer_class" value="com.wfs.engine.kafka.KafkaSerializer"/>
+			<property name="broker_list" value="localhost:9092"/>
+			<property name="zookeeper_connect" value="localhost:2181"/>
+			<property name="group_id" value="kcb"/>
+			<property name="message_max_bytes" value="104857600"/>	
+			<property name="producer_type" value="async"/>
+			<property name="queue_buffering_max_ms" value="1"/>
+			<property name="max_message_size" value="104857600"/>
+			<property name="zookeeper_session_timeout_ms" value="100"/>
+			<property name="zookeeper_sync_time_ms" value="2"/>
+			<property name="auto_commit_interval_ms" value="2"/>
+						
+		</bean>
+		
+		
+		<!-- NodeEngine Cluster-->
+		<bean id="engineCluster" class="com.wfs.engine.TaskEngine">
+			<property name="Jc" ref="JCluster"/>
+			<property name="Mc" ref="MCluster"/>
+			<property name="Rc" ref="RCluster"/>
+			<property name="Jrc" ref="JRCluster"/>
+			<property name="config" ref="EngineConfig"/>
+		</bean> 
+	
+			<!-- NodeEngine Cluster -->
+		<bean id="engineCluster2" class="com.wfs.engine.TaskEngine">
+			<property name="Jc" ref="JCluster"/>
+			<property name="Mc" ref="MCluster"/>
+			<property name="Rc" ref="RCluster"/>
+			<property name="Jrc" ref="JRCluster"/>
+			<property name="config" ref="EngineConfig2"/>
+		</bean>
+		<!--  <import resource="qyb-spring.xml"/> -->
+</beans>

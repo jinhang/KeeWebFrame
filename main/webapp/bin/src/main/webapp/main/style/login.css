@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+#loginHeader{width:100%;height:164px;padding:0;margin:0;}
+#loginHeader .headerCenter{background:url("./imgs/login/headerBg.png") repeat-x scroll 0 0 transparent;width:937px;height:164px;padding:0;margin:0 auto;}
+#loginContainer{width:855px;margin:0 auto;margin-bottom: 20px;}
+#loginPanel{width:356px;height:324px;background:url("./imgs/login/loginPanel.png") no-repeat scroll 0 0 transparent;position: relative;}
+#loginPanel .loginContent{position: absolute;top:60px;}
+#loginPanel_gto{width:356px;height:324px;background:url("./imgs/login/loginPanel_gto.png") no-repeat scroll 0 0 transparent;position: relative;}
+#loginPanel_gto .loginContent{position: absolute;top:60px;}
+.loginContent .filed{padding-top:16px;}
+.loginContent .filed label{display:inline-block;width:60px;text-align:right;padding-right:10px;font-size:12px;}
+.loginContent .filed input{border:1px solid #ccc;font-size:12px;line-height:16px;padding:3px;vertical-align:middle;width:170px;margin-right:10px;}
+.loginContent .filed #verCode{width:60px;}
+.loginContent .filed .verCodeImg{width:70px;height:28px;vertical-align:middle;border:none;}
+.loginContent .logLink{display:inline-block;line-height:14px;color:#266392;overflow:hidden;vertical-align: middle;}
+.loginContent .submit{padding-top:0px;padding-left:70px;}
+.loginContent .submitButt{height:29px;width:116px;float:left; border:none;text-indent:-9999px;cursor:pointer;background:url("./imgs/login/loginButton.png") no-repeat scroll 0 0 transparent;}
+#systemIntro{width:499px;height:324px;background:url("./imgs/login/systemIntro.png") no-repeat scroll 0 0 transparent;position: relative;}
+#systemIntro_gto{width:499px;height:324px;background:url("./imgs/login/systemIntro_gto.png") no-repeat scroll 0 -10px transparent;position: relative;}
+.introduceWrap{position: absolute;top:100px;left:60px;}
+.introduceWrap .introduce{color:#fff;font-size: 18px;line-height: 130%;font-family:"楷体";}
+.phoneWrap{position: absolute;top:234px;left:100px;}
+.phoneWrap .phone{color:#fff;font-weight:bold;font-style: oblique;font-size: 20px;}
+#loginFooter{width:100%; repeat-x scroll 0 0 transparent;position:relative;float:bottom;}
+#keepOrForgetPassword{float: left; margin-left: 5px;}
+.loginwarning{padding:0 0 0 76px;line-height:40px;color:#d11e4c;height:40px;}

@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet author="wangsen" id="13758114723-001">
+        <createTable tableName="note">
+            <column name="noteid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_note"/>
+            </column>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="context" type="VARCHAR(256)"/>
+            <column name="userid" type="VARCHAR(32)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-002">
+        <createTable tableName="relatedinfo">
+            <column name="relatedinfoid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_relatedinfo"/>
+            </column>
+            <column name="orderid" type="VARCHAR(32)"/>
+            <column name="picture" type="VARCHAR(256)"/>
+            <column name="userid" type="VARCHAR(32)"/>
+            <column name="staffid" type="VARCHAR(32)"/>
+            <column name="memo" type="VARCHAR(256)"/>
+            <column name="sound" type="VARCHAR(256)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-003">
+        <createTable tableName="timeserver">
+            <column name="timeserverid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_timeserver"/>
+            </column>
+            <column defaultValueBoolean="false" name="isdefault" type="bool"/>
+            <column name="duration" type="FLOAT(16)"/>
+            <column name="money" type="FLOAT(16)"/>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="memo" type="VARCHAR(256)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-004">
+        <createTable tableName="businesslibrary">
+            <column name="businesslibraryid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_businesslibrary"/>
+            </column>
+            <column name="orderid" type="VARCHAR(32)"/>
+            <column name="action" type="VARCHAR(32)"/>
+            <column name="createtime" type="datetime"/>
+            <column name="userid" type="VARCHAR(32)"/>
+            <column name="staffid" type="VARCHAR(32)"/>
+            <column name="memo" type="VARCHAR(256)"/>
+            <column name="code" type="VARCHAR(32)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-005">
+        <createTable tableName="evaluation">
+            <column name="evaluationid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_evaluation"/>
+            </column>
+            <column name="orderid" type="VARCHAR(32)"/>
+            <column name="etime" type="integer"/>
+            <column name="eattitude" type="integer"/>
+            <column name="userid" type="VARCHAR(32)"/>
+            <column name="staffid" type="VARCHAR(32)"/>
+            <column name="memo" type="VARCHAR(256)"/>
+            <column defaultValueBoolean="false" name="isshow" type="bool"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-006">
+        <createTable tableName="relation">
+            <column name="relationid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_relation"/>
+            </column>
+            <column name="followtype" type="integer"/>
+            <column name="userid" type="VARCHAR(32)"/>
+            <column name="staffid" type="VARCHAR(32)"/>
+            <column name="memo" type="VARCHAR(256)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-007">
+        <createTable tableName="coupon">
+            <column name="couponid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_coupon"/>
+            </column>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="picture" type="VARCHAR(256)"/>
+            <column name="momey" type="FLOAT(16)"/>
+            <column name="context" type="VARCHAR(256)"/>
+            <column name="userid" type="VARCHAR(32)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-008">
+        <createTable tableName="addresslibrary">
+            <column name="addresslibraryid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_addresslibrary"/>
+            </column>
+            <column name="provincial" type="VARCHAR(32)"/>
+            <column name="city" type="VARCHAR(32)"/>
+            <column name="district" type="VARCHAR(32)"/>
+            <column name="address" type="VARCHAR(256)"/>
+            <column name="userid" type="VARCHAR(32)"/>
+            <column name="type" type="integer"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-009">
+        <createTable tableName="center">
+            <column name="centerid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_center"/>
+            </column>
+            <column name="account" type="FLOAT(16)"/>
+            <column name="coins" type="FLOAT(16)"/>
+            <column name="level" type="VARCHAR(32)"/>
+            <column name="userid" type="VARCHAR(32)"/>
+            <column name="integral" type="integer"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-010">
+        <createTable tableName="shop">
+            <column name="shopid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_shop"/>
+            </column>
+            <column name="trafficnum" type="integer"/>
+            <column name="follownum" type="integer"/>
+            <column name="deliveryscope" type="VARCHAR(1024)"/>
+            <column name="userid" type="VARCHAR(32)"/>
+            <column name="quote" type="VARCHAR(256)"/>
+            <column name="features" type="VARCHAR(256)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-011">
+        <createTable tableName="user">
+            <column name="userid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_user"/>
+            </column>
+            <column name="username" type="VARCHAR(64)"/>
+            <column name="password" type="VARCHAR(32)"/>
+            <column name="nick" type="VARCHAR(32)"/>
+            <column name="type" type="integer"/>
+            <column name="telphone" type="VARCHAR(64)"/>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="image" type="VARCHAR(256)"/>
+            <column defaultValueBoolean="false" name="isidentified" type="bool"/>
+            <column name="securitycode" type="VARCHAR(32)"/>
+            <column name="registertime" type="datetime"/>
+        </createTable>
+    </changeSet>
+     <changeSet author="wangsen" id="13758114723-012">
+        <createTable tableName="message">
+            <column name="messageid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_message"/>
+            </column>
+            <column name="type" type="VARCHAR(32)"/>
+            <column name="userid" type="VARCHAR(32)"/>
+            <column name="staffid" type="VARCHAR(32)"/>
+            <column name="context" type="VARCHAR(256)"/>
+            <column name="orderid" type="VARCHAR(32)"/>
+            <column name="sendtype" type="VARCHAR(32)"/>
+            <column name="state" type="integer"/>
+            <column defaultValueBoolean="false" name="issms" type="bool"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-013">
+        <createTable tableName="order">
+            <column name="orderid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_order"/>
+            </column>
+            <column name="consignee" type="VARCHAR(256)"/>
+            <column name="telphone" type="VARCHAR(64)"/>
+            <column name="address" type="VARCHAR(256)"/>
+            <column name="receiveprovince" type="VARCHAR(32)"/>
+            <column name="receivecity" type="VARCHAR(32)"/>
+            <column name="receivedistrict" type="VARCHAR(32)"/>
+            <column name="state" type="integer"/>
+            <column name="sender" type="VARCHAR(256)"/>
+            <column name="stel" type="VARCHAR(64)"/>
+            <column name="senderaddress" type="VARCHAR(256)"/>
+            <column name="senderprovince" type="VARCHAR(32)"/>
+            <column name="sendercity" type="VARCHAR(32)"/>
+            <column name="senderdistrict" type="VARCHAR(32)"/>
+            <column name="signedway" type="VARCHAR(32)"/>
+            <column name="staffname" type="VARCHAR(32)"/>
+            <column name="stafftel" type="VARCHAR(64)"/>
+            <column name="sendcode" type="VARCHAR(256)"/>
+            <column name="createtime" type="datetime"/>
+            <column name="userid" type="VARCHAR(32)"/>
+            <column name="staffid" type="VARCHAR(32)"/>
+            <column name="totalprice" type="FLOAT(16)"/>
+            <column name="expresscharge" type="FLOAT(16)"/>
+            <column name="serverfee" type="FLOAT(16)"/>
+            <column name="discountfee" type="FLOAT(16)"/>
+            <column name="payway" type="VARCHAR(32)"/>
+            <column name="payfee" type="FLOAT(16)"/>
+            <column name="serialnum" type="VARCHAR(256)"/>
+            <column name="sendstaffname" type="VARCHAR(32)"/>
+            <column name="sendstafftel" type="VARCHAR(64)"/>
+            <column name="sigedname" type="VARCHAR(32)"/>
+            <column name="sigedtel" type="VARCHAR(64)"/>
+            <column name="packagetype" type="integer"/>
+            <column name="weight" type="FLOAT(16)"/>
+            <column name="detailname" type="VARCHAR(256)"/>
+            <column defaultValueBoolean="false" name="iscancelsend" type="bool"/>
+            <column defaultValueBoolean="false" name="isinsured" type="bool"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-014" >	
+        <addColumn tableName="addresslibrary">
+    		<column name="name" type="varchar(32)"/>
+    	</addColumn>
+    	<addColumn tableName="addresslibrary">
+    		<column name="tel" type="varchar(64)"/>
+    	</addColumn>
+    </changeSet> 
+    <changeSet author="wangsen" id="13758114723-015" >	
+        <addColumn tableName="addresslibrary">
+    		<column defaultValueBoolean="false" name="isdefault" type="bool"/>
+    	</addColumn>
+    	<addColumn tableName="addresslibrary">
+    		<column name="isdel" type="integer"/>
+    	</addColumn>
+    	<addColumn tableName="order">
+    		<column name="takeaddress" type="varchar(1024)"/>
+    	</addColumn>
+    	<addColumn tableName="order">
+    		<column name="reserveinfo" type="varchar(1024)"/>
+    	</addColumn>
+    	<addColumn tableName="message">
+    		<column name="time" type="datetime"/>
+    	</addColumn>
+    </changeSet>    
+    <changeSet author="wangsen" id="13758114723-016" >	
+        <addColumn tableName="shop">
+    		<column name="points1" type="varchar(64)"/>
+    		<column name="points2" type="varchar(64)"/>
+    		<column name="points3" type="varchar(64)"/>
+    		<column name="points4" type="varchar(64)"/>
+    		<column name="codeimage" type="varchar(256)"/>
+    	</addColumn>
+    </changeSet> 
+    <changeSet author="wangsen" id="13758114723-017" >	
+        <dropColumn tableName="user" columnName="isidentified"/>
+        <addColumn tableName="user">
+    		<column defaultValueBoolean="false" name="isidentified" type="boolean"/>
+    	</addColumn>
+    </changeSet> 
+    <changeSet author="wangsen" id="13758114723-018" >	
+        <dropColumn tableName="user" columnName="isidentified"/>
+        <addColumn tableName="user">
+    		<column name="isidentified" type="integer" defaultValue="0"/>
+    	</addColumn>
+    </changeSet> 
+    <changeSet author="wangsen" id="13758114723-019" >	
+        <dropColumn tableName="timeserver" columnName="isdefault"/>
+        <addColumn tableName="timeserver">
+    		<column name="isdefault" type="integer" defaultValue="0"/>
+    	</addColumn>
+    	<dropColumn tableName="evaluation" columnName="isshow"/>
+        <addColumn tableName="evaluation">
+    		<column name="isshow" type="integer" defaultValue="0"/>
+    	</addColumn>
+    	<dropColumn tableName="message" columnName="issms"/>
+        <addColumn tableName="message">
+    		<column name="issms" type="integer" defaultValue="0"/>
+    	</addColumn>
+    	<dropColumn tableName="order" columnName="iscancelsend"/>
+        <addColumn tableName="order">
+    		<column name="iscancelsend" type="integer" defaultValue="0"/>
+    	</addColumn>
+    	<dropColumn tableName="order" columnName="isinsured"/>
+        <addColumn tableName="order">
+    		<column name="isinsured" type="integer" defaultValue="0"/>
+    	</addColumn>
+    </changeSet> 
+    <changeSet author="wangsen" id="13758114723-020" >	
+        <addColumn tableName="message">
+    		<column name="mobile" type="varchar(64)"/>
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-021" >	
+        <dropColumn tableName="order" columnName="state"/>
+        <addColumn tableName="order">
+    		<column name="state" type="varchar(32)"/>
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-022" >
+        <addColumn tableName="message">
+    		<column name="ostate" type="varchar(32)"/>
+    	</addColumn>
+    </changeSet> 
+    <changeSet author="wangsen" id="13758114723-023" >
+        <dropColumn tableName="addresslibrary" columnName="isdefault"/>
+        <addColumn tableName="addresslibrary">
+    		<column name="isdefault" type="integer" defaultValue="0"/>
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-024" >
+        <addColumn tableName="order">
+    		<column name="weightinfo" type="varchar(64)" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-025" >
+        <dropColumn tableName="relation" columnName="followtype"/>
+        <addColumn tableName="relation">
+    		<column name="followtype" type="varchar(64)" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-026" >
+        <addColumn tableName="user">
+    		<column name="age" type="integer" />
+    	</addColumn>
+        <addColumn tableName="user">
+    		<column name="sex" type="varchar(32)" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-027" >
+        <addColumn tableName="order">
+    		<column name="dstaffid" type="varchar(32)" />
+    	</addColumn>
+        <addColumn tableName="order">
+    		<column name="suserid" type="varchar(32)" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-028" >
+        <addColumn tableName="relatedinfo">
+    		<column name="type" type="integer" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-029" >
+        <addColumn tableName="relatedinfo">
+    		<column name="uname" type="varchar(32)" />
+    	</addColumn>
+    	<addColumn tableName="relatedinfo">
+    		<column name="telphone" type="varchar(32)" />
+    	</addColumn>
+    	<addColumn tableName="relatedinfo">
+    		<column name="address" type="varchar(1024)" />
+    	</addColumn>
+    	<addColumn tableName="relatedinfo">
+    		<column name="landline" type="varchar(64)" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-030" >
+        <dropColumn tableName="relatedinfo" columnName="uname"/>
+        <addColumn tableName="relation">
+    		<column name="uname" type="varchar(32)" />
+    	</addColumn>
+    	<dropColumn tableName="relatedinfo" columnName="telphone"/>
+    	<addColumn tableName="relation">
+    		<column name="telphone" type="varchar(32)" />
+    	</addColumn>
+    	<dropColumn tableName="relatedinfo" columnName="address"/>
+    	<addColumn tableName="relation">
+    		<column name="address" type="varchar(1024)" />
+    	</addColumn>
+    	<dropColumn tableName="relatedinfo" columnName="landline"/>
+    	<addColumn tableName="relation">
+    		<column name="landline" type="varchar(64)" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-031" >
+    	<addColumn tableName="order">
+    		<column name="asbegin" type="datetime" />
+    	</addColumn>
+    	<addColumn tableName="relation">
+    		<column name="apend" type="datetime" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-032" >
+    	<dropColumn tableName="relation" columnName="apend"/>
+    	<addColumn tableName="order">
+    		<column name="apend" type="datetime" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-033" >
+    	<addColumn tableName="user">
+    		<column name="temptel" type="varchar(64)" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-034" >
+    	<addColumn tableName="order">
+    		<column name="rdtime" type="datetime" />
+    	</addColumn>
+    	<addColumn tableName="order">
+    		<column name="dcount" type="int" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-035" >
+    	<addColumn tableName="evaluation">
+    		<column name="evatype" type="varchar(32)" />
+    	</addColumn>    	
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-036" >
+    	<addColumn tableName="user">
+    		<column name="channelid" type="varchar(64)" />
+    	</addColumn>    	
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-037">
+        <createTable tableName="logisticsdata">
+            <column name="logisticsdataid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_logisticsdata"/>
+            </column>
+            <column name="num" type="VARCHAR(32)"/>
+            <column name="sendcode" type="VARCHAR(32)"/>
+            <column name="scantype" type="VARCHAR(32)"/>
+            <column name="scanname" type="VARCHAR(32)"/>
+            <column name="stationcode" type="VARCHAR(32)"/>
+            <column name="scantime" type="VARCHAR(64)"/>
+            <column name="staffcode" type="VARCHAR(32)"/>
+            <column name="lnstation" type="VARCHAR(32)"/>
+            <column name="weight" type="VARCHAR(32)"/>
+            <column name="pacakgenum" type="VARCHAR(32)"/>
+            <column name="batchnum" type="VARCHAR(64)"/>
+            <column name="pronum" type="VARCHAR(32)"/>
+            <column name="memo" type="VARCHAR(32)"/>
+            <column name="image" type="VARCHAR(32)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-038">
+        <addColumn tableName="logisticsdata">
+    		<column name="createtime" type="datetime" />
+    	</addColumn> 
+    	<addColumn tableName="logisticsdata">
+    		<column name="state" type="int" />
+    	</addColumn>    
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-039">
+        <addColumn tableName="logisticsdata">
+    		<column name="dsnum" type="VARCHAR(32)" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-040">
+        <addColumn tableName="user">
+    		<column name="stationcode" type="varchar(64)" />
+    	</addColumn> 
+    	<addColumn tableName="user">
+    		<column name="staffcode" type="varchar(64)" />
+    	</addColumn>   
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-041">
+        <addColumn tableName="user">
+    		<column name="dtype" type="int" />
+    	</addColumn> 
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-042">
+        <addColumn tableName="message">
+    		<column name="targetid" type="varchar(32)" />
+    	</addColumn> 
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-043">
+        <addColumn tableName="message">
+    		<column name="pushtype" type="int" />
+    	</addColumn> 
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-044">
+        <addColumn tableName="user">
+    		<column name="dserial" type="varchar(128)" />
+    	</addColumn> 
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-045">
+        <createTable tableName="client">
+            <column name="clientid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_client"/>
+            </column>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="type" type="int"/>
+            <column name="address" type="VARCHAR(32)"/>
+            <column name="phone" type="VARCHAR(32)"/>
+            <column name="status" type="int"/>
+            <column name="memo" type="VARCHAR(64)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-046">
+        <createTable tableName="staff">
+            <column name="staffid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_staff"/>
+            </column>
+            <column name="clientid" type="VARCHAR(32)"/>
+            <column name="type" type="int"/>
+            <column name="sex" type="VARCHAR(32)"/>
+            <column name="username" type="VARCHAR(32)"/>
+            <column name="password" type="VARCHAR(32)"/>
+            <column name="status" type="int"/>
+            <column name="ismaster" type="int"/>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="lastlogintime" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-047">
+        <createTable tableName="role">
+            <column name="roleid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_role"/>
+            </column>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="type" type="int"/>
+            <column name="parentid" type="VARCHAR(32)"/>
+            <column name="clientid" type="VARCHAR(32)"/>
+            <column name="status" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-048">
+        <createTable tableName="rolepermission">
+            <column name="rolepermissionid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_rolepermission"/>
+            </column>
+            <column name="roleid" type="VARCHAR(32)"/>
+            <column name="permissionid" type="VARCHAR(32)"/>
+            <column name="type" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-049">
+        <createTable tableName="staffpermission">
+            <column name="staffpermissionid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_staffpermission"/>
+            </column>
+            <column name="staffid" type="VARCHAR(32)"/>
+            <column name="roleid" type="VARCHAR(32)"/>
+            <column name="permissionid" type="VARCHAR(32)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-050">
+        <createTable tableName="permission">
+            <column name="permissionid" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_permission"/>
+            </column>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="type" type="int"/>
+            <column name="status" type="int"/>
+            <column name="parentid" type="VARCHAR(32)"/>
+            <column name="action" type="VARCHAR(32)"/>
+            <column name="ordernum" type="int"/>
+            <column name="level" type="int"/>
+            <column name="orderby" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-051" >
+    	<dropColumn tableName="permission" columnName="action"/>
+    	<addColumn tableName="permission">
+    		<column name="action" type="VARCHAR(1024)" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-052">
+        <createTable tableName="forwardcompany">
+            <column name="id" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_forwardcompany"/>
+            </column>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="type" type="int"/>
+            <column name="memo" type="VARCHAR(32)"/>
+            <column name="code" type="VARCHAR(32)"/>
+            <column name="sortno" type="int"/>
+            <column name="templateimgurl" type="VARCHAR(255)"/>
+            <column name="pagewidth" type="VARCHAR(32)"/>
+            <column name="pageheight" type="VARCHAR(32)"/>
+            <column name="templatevalue" type="VARCHAR(5000)"/>
+            <column name="shortname" type="VARCHAR(32)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-053">
+        <createTable tableName="expresstemplate">
+            <column name="id" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_expresstemplate"/>
+            </column>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="initastr" type="VARCHAR(256)"/>
+            <column name="clientid" type="VARCHAR(32)"/>
+            <column name="forwardcompanyid" type="VARCHAR(32)"/>
+            <column name="isdefault" type="int"/>
+            <column name="pagewidth" type="VARCHAR(32)"/>
+            <column name="pageheight" type="VARCHAR(32)"/>
+            <column name="templatevalue" type="VARCHAR(5000)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-054">
+        <createTable tableName="imomessage">
+            <column name="id" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_imomessage"/>
+            </column>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="image" type="VARCHAR(256)"/>
+            <column name="userid" type="VARCHAR(32)"/>
+            <column name="orderid" type="VARCHAR(32)"/>
+            <column name="createtime" type="VARCHAR(64)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-055">
+        <addColumn tableName="imomessage">
+    		<column name="evatype" type="VARCHAR(32)" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-056">
+        <dropColumn tableName="imomessage" columnName="createtime"/>
+        <addColumn tableName="imomessage">
+    		<column name="createtime" type="datetime" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-057">
+        <addColumn tableName="imomessage">
+    		<column name="type" type="int" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-058">
+        <addColumn tableName="imomessage">
+    		<column name="text" type="VARCHAR(255)" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-059">
+        <addColumn tableName="expresstemplate">
+    		<column name="needsendcode" type="int" />
+    	</addColumn>
+    	<addColumn tableName="expresstemplate">
+    		<column name="isopen" type="int" />
+    	</addColumn>
+    	<addColumn tableName="expresstemplate">
+    		<column name="templateImgUrl" type="VARCHAR(255)" />
+    	</addColumn>
+    	<addColumn tableName="expresstemplate">
+    		<column name="printer" type="VARCHAR(255)" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-060">
+        <createTable tableName="sysexpresstemplate">
+            <column name="id" type="VARCHAR(32)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_sysexpresstemplate"/>
+            </column>
+            <column name="name" type="VARCHAR(32)"/>
+            <column name="image" type="VARCHAR(256)"/>
+            <column name="clientid" type="VARCHAR(32)"/>
+            <column name="forwardcompanyid" type="VARCHAR(32)"/>
+            <column name="isdefault" type="int"/>
+            <column name="width" type="VARCHAR(32)"/>
+            <column name="height" type="VARCHAR(32)"/>
+            <column name="value" type="VARCHAR(5000)"/>
+            <column name="needsendcode" type="int"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-061">
+        <addColumn tableName="center">
+    		<column name="etime" type="VARCHAR(32)" />
+    	</addColumn>
+    	<addColumn tableName="center">
+    		<column name="eattitude" type="VARCHAR(32)" />
+    	</addColumn>
+    	<addColumn tableName="center">
+    		<column name="percentage" type="VARCHAR(32)" />
+    	</addColumn>
+    	<addColumn tableName="center">
+    		<column name="countone" type="VARCHAR(32)" />
+    	</addColumn>
+    	<addColumn tableName="center">
+    		<column name="counttwo" type="VARCHAR(32)" />
+    	</addColumn>
+    	<addColumn tableName="center">
+    		<column name="countthree" type="VARCHAR(32)" />
+    	</addColumn>
+    	<addColumn tableName="center">
+    		<column name="countfour" type="VARCHAR(32)" />
+    	</addColumn>
+    	<addColumn tableName="center">
+    		<column name="countfive" type="VARCHAR(32)" />
+    	</addColumn>
+    </changeSet>
+    <changeSet author="wangsen" id="13758114723-062">
+    	<addColumn tableName="center">
+    		<column name="apercentage" type="VARCHAR(32)" />
+    	</addColumn>
+    	<addColumn tableName="center">
+    		<column name="acountone" type="VARCHAR(32)" />
+    	</addColumn>
+    	<addColumn tableName="center">
+    		<column name="acounttwo" type="VARCHAR(32)" />
+    	</addColumn>
+    	<addColumn tableName="center">
+    		<column name="acountthree" type="VARCHAR(32)" />
+    	</addColumn>
+    	<addColumn tableName="center">
+    		<column name="acountfour" type="VARCHAR(32)" />
+    	</addColumn>
+    	<addColumn tableName="center">
+    		<column name="acountfive" type="VARCHAR(32)" />
+    	</addColumn>
+    </changeSet>
+</databaseChangeLog>

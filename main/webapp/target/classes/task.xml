@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Root xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!--  
+    <xi:include href="task/client/goods/goods.xml" />
+    -->
+	<TaskConfig>
+		<Filters>
+			<task id="fitlersession">
+				<step id="1" actionid="sessionFilter">
+				</step>
+			</task>
+		</Filters>
+		<Tasks>
+			<task id="test" returnid="2">
+				<step id="1" actionid="select_test">
+				</step>
+				<step id="2" actionid="test">
+					<param key="id">
+					</param>
+					<param type="string">4
+				</param>
+				</step>
+				<step id="3" actionid="test">
+					<param svalue="1">
+					</param>
+				</step>
+				<step id="4" actionid="test">
+					<param type="string">的
+				</param>
+				</step>
+			</task>
+			
+			<task id="test1">
+				<step id="1" actionid="test1">
+				</step>
+			</task>
+			
+			<task id="select_test">
+				<step id="1" actionid="select_permission">
+				</step>
+				<step id="2" actionid="generateGridCellXml">
+					<param lvalue="1"></param>
+				</step>
+			</task>
+			<task id="delete_test">
+				<step id="1" actionid="delete">
+					<param key="test">
+					</param>
+				</step>
+			</task>
+			<task id="get_combo_value">
+				<step id="1" actionid="getComboValue">
+					<param key="enumType">
+					</param>
+				</step>
+			</task>
+			<task id="saveOrUpdateListForTask">
+				<step id="1" actionid="saveOrUpdateList">
+					<param key="sou_list">
+					</param>
+				</step>
+			</task>
+			<task id="saveListForTask">
+				<step id="1" actionid="saveList">
+					<param key="save_list">
+					</param>
+				</step>
+			</task>
+			<task id="mergeList">
+				<step id="1" actionid="mergeList">
+					<param key="meger_list">
+					</param>
+				</step>
+			</task>
+			<task id="deleteListForTask">
+				<step id="1" actionid="deleteList">
+					<param key="delete_list">
+					</param>
+				</step>
+			</task>
+			<task id="save">
+				<step id="1" actionid="save">
+					<param key="obj">
+					</param>
+				</step>
+			</task>
+			<task id="merge">
+				<step id="1" actionid="merge">
+					<param key="obj">
+					</param>
+				</step>
+			</task>
+			<task id="delete">
+				<step id="1" actionid="delete">
+					<param key="obj">
+					</param>
+				</step>
+			</task>
+			<task id="task_get_taobaoitemcat_from_taobao">
+				<step id="step_get_taobaoitemcat_from_taobao" actionid="action_get_taobaoitemcat_from_taobao">
+				</step>
+			</task>
+			
+			<task id="t_get_hf_jsontest">
+				<step id="1"  actionid="a_get_hf_jsontest">
+				</step>
+			</task>
+			
+		</Tasks>
+		<Actions>
+		    
+		<action id="sessionFilter" class="com.kcb.common.session.DwrGetSession">
+		</action>
+		<action id="action_get_taobaoitemcat_from_taobao" class="com.kcb.client.taobao.domain.impl.TaobaoItemCatCatcher">
+		</action>
+		
+		<!-- <action id="test" class="com.wfos.test.WorkFlowTest" method="test"></action> -->
+		
+		<action id="select_test" type="selectlist" page="page" limit="limit">
+			from Inventory as inv 
+		</action>
+		<action id="generateDhxComplete" class="com.kcb.common.dhtmlx.DhtmlxDhxComplete">
+		</action>
+		<action id="generateGridXmlFromList" class="com.kcb.common.dhtmlx.DhtmlxGridXmlFromList">
+		</action>
+		<action id="generateGridXmlFromListWithString" class="com.kcb.common.dhtmlx.DhtmlxGridXmlFromListWithString">
+		</action>
+		<action id="generateGridCellXml" class="com.kcb.common.dhtmlx.DhtmlxGridCellXml">
+		</action>		
+		<action id="generateTreeXml" class="com.kcb.common.dhtmlx.DhtmlxTreeXml">
+		</action>
+		<action id="generateStringListMsg" class="com.kcb.common.dhtmlx.DhtmlxStringListMsg">
+		</action>
+		<action id="generateGridHeadXml" class="com.kcb.common.dhtmlx.DhtmlxGridHeadXml">
+		</action>
+		<action id="generateTreeMapXml" class="com.kcb.common.dhtmlx.DhtmlxTreeMapXml">
+		</action>			
+		<action id="generateGridXmlByColmun" class="com.kcb.common.dhtmlx.DhtmlxGridXmlByColmun">
+		</action>
+		<!--公用语句 -->
+		<action id="save" method="save"></action>
+		<action id="merge" method="merge"></action>
+		<action id="mergeList" method="mergeList"></action>
+		<action id="saveOrUpdate" method="saveOrUpdate"></action>
+		<action id="saveOrUpdateList" method="saveList"></action>
+		<action id="saveList" method="saveList"></action>
+				
+		<action id="update" method="update"></action>
+		<action id="updateList" method="updateList"></action>
+
+		<action id="delete" method="delete"></action>		
+		<action id="deleteList" method="deleteList"></action>
+			
+		<!--手写Delete语句 -->
+		<action id="delete_test" type="delete">
+				delete from Test where id = :idi 
+		</action>
+		
+		
+		<action id="test1" limit="2" column="aa,bb">
+				select order.seller,order.buyer from Order as order
+		</action>
+		
+		
+		
+		<action id="getComboValue" class="com.kcb.common.dhtmlx.ComboValueGeneratorGetComboValue">
+		</action>
+		<action id="generateComboValue" class="com.kcb.common.dhtmlx.ComboValueGeneratorGenerateComboValue">
+		</action>
+		<!-- 自定义Action -->
+		<action id="a_get_hf_jsontest">
+				select json_each_text(o.productinfoid) from Outstock as o where o.id=:id
+		</action>
+		</Actions>
+	</TaskConfig>
+</Root>

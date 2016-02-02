@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd">
+	
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	    <property name="triggers">
+	        <list>
+	            <ref bean="cronTrigger_sms"/>
+	            <ref bean="cronTrigger_zm"/>
+	        </list>
+	    </property>
+	</bean>
+	<bean id="messageserver" class="com.kcb.app.assign.AutoSendMessage">
+	    <property name="auto_audit">
+			<value>${auto_audit}</value>
+		</property>
+	</bean>
+	<!-- 自动触发信息推送发送 -->
+	<bean id="jobDetail_sms" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	  <property name="targetObject" ref="messageserver" />
+	  <property name="targetMethod" value="AutoSend" />
+	  <property name="concurrent" value="false" />
+	</bean>
+	<bean id="cronTrigger_sms" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="jobDetail_sms"></property>
+		<property name="cronExpression" value="0 0/5 * * * ?"></property>
+	</bean>
+	
+	
+	<bean id="zmserver" class="com.kcb.app.assign.AutoSendMessage">
+	    <property name="upload_zm_data">
+			<value>${upload_zm_data}</value>
+		</property>
+	</bean>
+	<!-- 自动触发哲盟对接 -->
+	<bean id="jobDetail_zm" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+	  <property name="targetObject" ref="zmserver" />
+	  <property name="targetMethod" value="AutoUploadZM" />
+	  <property name="concurrent" value="false" />
+	</bean>
+	<bean id="cronTrigger_zm" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="jobDetail_zm"></property>
+		<property name="cronExpression" value="0 0/5 * * * ?"></property>
+	</bean>
+</beans>
+
+
+
+
+

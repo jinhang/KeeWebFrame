@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+    http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+		
+	<!-- old
+	 <bean id="SessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"> -->	
+	
+	<!-- <context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.kcb" /> -->
+	<bean id="SessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="DataSource" /> 
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${dialect}</prop>
+				<prop key="hibernate.show_sql">${show_sql}</prop>
+				<!-- prop key="hibernate.search.default.directory_provider">filesystem</prop>
+    		    <prop key="hibernate.search.default.indexBase">${lucene_path}/index</prop> -->
+			</props>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>com.kcb.*</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean id="AccessSessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="AccessDataSource" /> 
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${dialect}</prop>
+				<prop key="hibernate.show_sql">${show_sql}</prop>
+			</props>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>com.kcb.common.export.access.*</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="OracleSessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<!-- 
+		<property name="dataSource">
+			<ref local="OracleDataSource" /> 
+		</property>
+		 -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">${show_sql}</prop>
+			</props>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>com.kcb.common.e3import.*</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 
+	<bean id="OracleDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${oracle_driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${oracle_url}</value>
+		</property>
+		<property name="username">
+			<value>${oracle_username}</value>
+		</property>
+		<property name="password">
+			<value>${oracle_password}</value>
+		</property>
+		<property name="initialSize">
+            <value>50</value>
+        </property>
+        <property name="maxActive">
+            <value>100</value>
+        </property>
+	</bean>
+	 -->
+	
+	<bean id="AccessDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${accessDriverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${accessUrl}</value>
+		</property>
+		<property name="username">
+			<value>${accessUsername}</value>
+		</property>
+		<property name="password">
+			<value>${accessPassword}</value>
+		</property>
+		<property name="initialSize">
+            <value>50</value>
+        </property>
+        <property name="maxActive">
+            <value>100</value>
+        </property>
+	</bean>
+	
+	<bean id="DataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${url}</value>
+		</property>
+		<property name="username">
+			<value>${username}</value>
+		</property>
+		<property name="password">
+			<value>${password}</value>
+		</property>
+		<property name="initialSize">
+            <value>50</value>
+        </property>
+        
+        <property name="maxActive">
+            <value>${maxActive}</value>
+        </property>
+	</bean>
+</beans>

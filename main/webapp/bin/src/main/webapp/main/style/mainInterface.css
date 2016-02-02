@@ -1,0 +1,155 @@
+@CHARSET "UTF-8";
+/*YUI CSS Reset{*/
+/*
+Copyright (c) 2011, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 2.9.0
+*/
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,select,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,button,caption,cite,code,dfn,em,input,optgroup,option,select,strong,textarea,th,var{font:inherit}del,ins{text-decoration:none}li{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:baseline}sub{vertical-align:baseline}legend{color:#000}
+
+/*#main{width:100%;height:100%;min-width:1200px;min-height:650px;margin:0 auto;position:relative;}
+#header{width:100%;height:30px;background-color:#0e93e2;}
+#header .logo .logo-name{font-size:18px;font-weight:bold;color:#ffffff;}
+#content{position:relative;}
+#mainLayout{width:100%;height:70%;}*/
+html,body {width: 100%;height: 100%;margin: 0px;padding: 0px;overflow: hidden;}
+body{font-family:"宋体","Microsoft Yahei",Tahoma,Arial,"宋体",Verdana,sans-serif;font-size:14px;color:#333333;}
+#header{height:30px;}
+#headerWrap{height:100%;background:url("./imgs/theme/header-bg.gif") repeat-x scroll 0 0 transparent;}
+#header h1{float:left;width:170px;height:100%;background:url("./imgs/theme/logo_.jpg") no-repeat scroll 0 0 transparent;text-indent:-99999px;}
+#header h1 span.logoName{font-size: 18px;font-weight:bold;color:#ffffff;padding:3px 0 0 20px;}
+#header .userInfo{height:31px;position:absolute;top:0px;right:10px;}
+#header .userInfo ul{padding:5px 2px 7px 2px;}
+#header .userInfo ul li{padding:0 6px;height:18px;line-height:17px;overflow:hidden;text-align:center;vertical-align:top;display:inline-block;*display:inline;zoom:1;}
+#header .userInfo ul li.last{border:none;}
+#header .userInfo ul li a{color:#F7F6F6;font-size:13px;padding:3px 6px;}
+#header .userInfo ul li a:hover{background:#fff;color:#006699;border-radius:5px;text-decoration:none;}
+#header .userInfo ul li a#userName:hover,#header .userInfo ul li a#msg:hover{background:none;color:#F7F6F6;cursor:default;}
+
+#master{height:100%; width:100%;background:#fff;position:absolute;top:0;z-index:5;opacity:0.5;filter: Alpha(Opacity=50)}
+#about{position:absolute;left:50%;top:50%;height: 244px;width: 444px; background: url(imgs/about.png) no-repeat;margin-left: -222px;margin-top:-122px;z-index:20;}
+.versionText{margin-top:97px;margin-left:37px;}
+#about p{line-height:20px;color: #fff;font-size:12px;}
+#about a{text-decoration:underline;}
+#about a:link, #about a:visited, #about a:hover, #about a:active{color: #DDD;}
+
+#footer{background:url("./imgs/theme/footerBg.png") repeat-x scroll 180px 0 transparent;;position: absolute;bottom:0;left:0;width:100%;height:20px;}
+#shortcutWrap h3{background:#ccddee;border-top:1px solid #999999;border-bottom:1px solid #999999;margin-top:4px;text-align: center;}
+#shortcut{margin:2px 0 0 18px;text-align: center;border:1px solid #999999;border-bottom:none;border-right:none;}
+#shortcut li{border-bottom:1px solid #999999;}
+
+/*dhtmlx组件css修改*/
+
+/*修改layout：1、去处layout的左边距 2、去边框*/
+div.dhxcont_global_layout_area{left:0px !important;width:100% !important;}
+.dhxcont_global_content_area{border:none !important;width:100% !important;}
+
+/*修改左边菜单栏：1、加背景 2、整体下移*/
+span.standartTreeRow,span.standartTreeRow_lor{height:auto !important;}
+.standartTreeImage{width:19px !important;height:20px !important;}
+.selectedTreeRow{background:transparent none no-repeat scroll 0 0 !important;}
+.selectedTreeRow{border:none !important;font:inherit !important;height:100% !important;}
+.dhxtree_dhx_skyblue{background:transparent !important;BACKGROUND-COLOR: transparent; 
+scrollbar-face-color: #cfcfcf; 
+scrollbar-shadow-color: #f2f2f2; 
+scrollbar -highlight-color: #f2f2f2; 
+scrollbar-3dlight-color: #f2f2f2; 
+scrollbar-darkshadow-color: #f2f2f2; 
+scrollbar-track-color: #f2f2f2; 
+scrollbar-arrow-color: #979797
+}
+::-webkit-scrollbar
+{	
+	width: 12px;
+	height: 12px;
+}
+::-webkit-scrollbar-track-piece
+{
+	background-color: #e8e8e8;
+	-webkit-border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:vertical
+{
+	height: 15px;
+	background-color: #cfcfcf;
+	-webkit-border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:horizontal
+{
+	width: 15px;
+	background-color: #cfcfcf;
+	-webkit-border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover{
+    height:50px;
+    background-color:#959595;
+    -webkit-border-radius:4px;
+}
+::-webkit-scrollbar-thumb:active{
+    height:50px;
+    background-color:#666666;
+    -webkit-border-radius:4px;
+}
+.nfont{font-family: arial;}
+.dhxtree_dhx_skyblue .standartTreeRow{cursor:pointer;border:none !important;font:inherit !important;font-size:inherit !important;}
+.main-navMenuTop{background:url("./imgs/theme/logo_.jpg") no-repeat scroll 0 -30px transparent;}
+.main-navMenuTop_BT{background:url("./imgs/theme/logo_BT.jpg") no-repeat scroll 0 -30px transparent;}
+.main-navMenuTop_T{background:url("./imgs/theme/logo_T.jpg") no-repeat scroll 0 -30px transparent;}
+.main-navMenu{top:30px !important;background:url("./imgs/theme/nav_bg.jpg") repeat transparent !important;}
+td.standartTreeRow{background: url("./imgs/theme/nav-bg.gif") no-repeat scroll 0 30px transparent;width:170px !important;height:30px !important;vertical-align:middle;margin:0px !important;font-family:"宋体","Microsoft Yahei",Tahoma,Arial,"宋体",Verdana,sans-serif !important;}
+.main-navMenu .navMenu-level1 span{font-size:13px !important;font-weight:bold !important;display:block !important;line-height:20px !important;height:20px !important;}/* color:#333 !important; */
+.main-navMenu .navMenu-level2 span{float:left;font-size:12px !important;display:inline-block !important;line-height:20px !important;margin:0 10px 0 2px !important;height:20px !important;text-indent:6px;}/* color:#333 !important; */
+.main-navMenu .navMenu-level2 span.tree-level2-td{font-family: arial;color:#fff;background-color: #70a414;border-radius:5px;text-indent:0;padding:0 6px 0 5px;height:18px !important;line-height:18px !important;}
+.main-navMenu tr.navMenu-level1 td.standartTreeRow.navMenuSelected{background-position:0 -2px !important;}/* border-top:1px solid #a6c1de !important;border-bottom:1px solid #a6c1de !important; */
+.main-navMenu tr.navMenu-level2 td.standartTreeRow.navMenuSelected{background-position:4px -2px !important;}
+.main-navMenu .navMenu-level2 span.tree-level2-td.red{background-color: #E9152E;background:url("./imgs/theme/num_red.png") no-repeat scroll 2px 1px transparent\9;*background:url("./imgs/theme/num_red.png") no-repeat scroll 2px 1px transparent;}
+
+/*修改tabbar：1、换背景*/
+.w{width:100% !important;}
+.dhx_tablist_zone{top:0px !important;height:30px !important;width:100% !important;background:url("./imgs/theme/header-bg.gif") repeat-x scroll 0 -30px transparent !important;border:none !important;}
+.dhx_tablist_line{height:0px !important;}
+.dhx_tabbar_zone .dhx_tablist_zone .dhx_tabbar_row{background:url("./imgs/theme/header-bg.gif") no-repeat scroll 0 -30px transparent !important;border:none !important}
+.dhx_tab_element{height:30px !important;width:110px !important;padding-top:0px !important;border:none !important;background:url("./imgs/theme/tab_bg1.png") no-repeat scroll 0 0 transparent !important;}
+.dhx_tab_element{text-align:center !important;padding:1px 0 0 0 !important;}
+
+.dhx_tab_element div{display:none !important;}
+.dhx_tab_element img{right:6px !important;top:10px !important;height:13px;width:13px;background: url(imgs/close1.png) no-repeat !important;}/*close图标的位置*/
+.dhx_tab_element_active img{background-image: url(imgs/close2.png) !important;}
+.dhx_tab_element span{overflow:hidden !important;width:90px !important;line-height:22px !important;display:block !important;float:left;}/* margin:0 0 0 7px !important; */
+.dhx_tab_element.tabbar-firstTab span{width:105px !important;}
+.dhx_tab_element_active{background:url("./imgs/theme/tab_bg2.png") no-repeat scroll 0 0 transparent !important;font-weight:bold;margin-left:3px;font-size:12px;}
+.dhx_tab_element_active span{color:#333;}
+.dhx_tab_element_inactive{font-size:12px}/* font:14px "宋体","Microsoft Yahei",Tahoma,Arial,"宋体",Verdana,sans-serif !important; */
+.tabbar-delTabBg{background:transparent none no-repeat scroll 0 0 !important;}
+.dhxtree_dhx_skyblue .selectedTreeRow_lor, .dhxtree_dhx_skyblue .selectedTreeRow{color:#fff;}
+
+/*修改tabbar的内容区*/
+.dhx_tabcontent_zone{border:none !important;top:32px !important;}
+/*修改grid：1、修改图片行的高度*/
+
+table.dhtmlxLayoutPolyContainer_dhx_skyblue td.dhtmlxLayoutPolySplitterVer {
+	width: 5px;
+	height:100%;
+	cursor: pointer;
+	background: url("imgs/theme/tglBg.png") no-repeat left top #e1eff5 !important;
+	background: #e1eff5;
+	-moz-user-select: none;
+}
+
+.clickbefore{
+	background: url("imgs/theme/admin_barclose.gif") no-repeat left center !important;
+
+	height:100% !important;width:5px;
+}
+.clickafter{
+	background: url("imgs/theme/admin_baropen.gif") no-repeat left center !important;
+
+	height:100% !important;width:5px;
+}
+/* .dhx_tabbar_row1{height:39px !important;background:url("./imgs/theme/header_bottom.jpg") no-repeat scroll 0 0 transparent !important;border:none !important}
+ */
+.message.red{background:#ff5f6a;border: 1px solid #9F2735;height: 30px !important;}
+.message.blue{background:#419AF7;border: 1px solid #2B79C8;}
+.message{opacity:0.9;cursor:pointer;font-size:12px;line-height:30px;padding: 0 35px;color:#FFF;background:#3F9A26;border: 1px solid #1C7101;border-top:none;position:absolute;display:none;z-index:200;}
+.message a{font-weight:bold;text-decoration:underline;color:#FFF}

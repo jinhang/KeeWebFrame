@@ -1,0 +1,104 @@
+@CHARSET "UTF-8";
+.block {
+	border: 1px solid rgb(204, 204, 204);
+	position: absolute;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+	border-radius:5px;
+}
+#firstBlock {
+	width: 45%;
+	height: 42%;
+	top: 6%;
+	left: 4%;
+}
+
+#secondBlock {
+	width: 45%;
+	height: 42%;
+	top: 6%;
+	left: 51%;
+}
+
+#thirdBlock {
+	width: 45%;
+	height: 42%;
+	top: 51%;
+	left: 4%;
+	float: left;
+}
+
+#forthBlock {
+	width: 45%;
+	height: 42%;
+	top: 51%;
+	left: 51%;
+}
+
+.blockChild{
+	margin: 20px 0px 0px 8%;
+}
+
+.blockChild span{
+	cursor: pointer;
+	margin-left: 1%;
+	font-size: 15px; 
+	font-weight: bold;
+}
+
+#orderInfo{
+	margin:8% 0 0 8%;
+}
+
+#orderInfo li{
+	display:block;
+	float:left;
+	margin-right:3%;
+}
+#orderInfo li span{
+	position: relative; 
+	left: -48%; 
+	font-weight: bold; 
+	font-size: 14px; 
+	top: 50px;
+}
+#orderInfo li span a{
+	color:#0E62A0;
+}
+.info{
+	margin:5% 0 0 8%;
+}
+.info li{
+	margin-bottom:3%;
+}
+.info li span{
+	color:rgb(30,107,163);
+	font-size:16px;
+	font-weight:bold;
+}
+
+.more{
+	position:absolute;
+	top:85%;
+	left:8%;
+	color:#0E62A0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

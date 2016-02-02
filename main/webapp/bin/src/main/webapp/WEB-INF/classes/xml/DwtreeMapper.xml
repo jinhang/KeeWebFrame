@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN"
+                           "http://castor.org/mapping.dtd">
+<mapping>
+	<class name="com.dhtmlx.Rows">
+		<map-to xml="rows"/>
+		<field name="row" type="com.model.Test" collection="arraylist">
+			<bind-xml name="row" />
+		</field>
+	</class>
+	<class name="com.model.Test">
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id"/>
+		</field>
+		<field name="name" type="java.lang.String">
+			<bind-xml name="name" />
+		</field>
+	</class>
+</mapping>
+

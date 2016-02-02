@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN"
+                           "http://castor.org/mapping.dtd">
+<mapping>
+	<class name="com.kcb.model.ReturnData">
+		<map-to xml="data" />
+		<field name="item" type="com.kcb.model.Files" collection="arraylist">
+			<bind-xml name="item" />
+		</field>
+	</class>
+	<class name="com.kingyi.files.model.Files">
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id" node="attribute" />
+		</field>
+		<field name="src" type="java.lang.String">
+			<bind-xml name="src" node="attribute" />
+		</field>
+		<field name="type" type="java.lang.String">
+			<bind-xml name="type" node="attribute" />
+		</field>
+		<field name="title" type="java.lang.String">
+			<bind-xml name="name" node="attribute" />
+		</field>
+		<field name="date" type="java.lang.String">
+			<bind-xml name="date" node="attribute" />
+		</field>
+		<field name="url" type="java.lang.String">
+			<bind-xml name="thumb" node="attribute" />
+		</field>
+	</class>
+</mapping>

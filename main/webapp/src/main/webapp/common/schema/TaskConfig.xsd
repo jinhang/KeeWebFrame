@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.kucangbao.com"
+xmlns="http://www.kucangbao.com" elementFormDefault="qualified">
+<xs:element name="TaskConfig">
+	
+        <xs:complexType>
+		<xs:sequence>
+			<!-- 追加子元素Filters-->
+			<xs:element name="Filters" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+				<xs:sequence>
+					<!-- 追加子元素task-->
+					<xs:element name="task" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence> 
+							<!-- 追加子元素step-->
+							<xs:element name="step"  minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence> 
+									<xs:element name="param" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType mixed="true">
+										<xs:attribute name="key" type="xs:string" use="optional"/>
+										<xs:attribute name="type" type="xs:string" use="optional"/>
+										<xs:attribute name="svalue" type="xs:string" use="optional"/>
+										<xs:attribute name="ovalue" type="xs:string" use="optional"/>
+										<xs:attribute name="lvalue" type="xs:string" use="optional"/>
+										<xs:attribute name="cvalue" type="xs:string" use="optional"/>
+										</xs:complexType>
+									</xs:element> 
+									</xs:sequence> 
+									<!--定义该元素属性-->
+									<xs:attribute name="id" type="xs:string" use="required" />
+									<xs:attribute name="actionid" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence> 
+						<!--定义该元素属性-->
+						<xs:attribute name="id" type="xs:string" use="required" />
+						<!--定义该元素属性-->
+						<xs:attribute name="returnid" type="xs:string" use="optional" />
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<!-- 追加子元素Tasks-->
+			<xs:element name="Tasks" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+				<xs:sequence>
+					<!-- 追加子元素task-->
+					<xs:element name="task" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence> 
+							<!-- 追加子元素step-->
+							<xs:element name="step"  minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence> 
+									<xs:element name="param" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType mixed="true">
+										<xs:attribute name="key" type="xs:string" use="optional"/>
+										<xs:attribute name="type" type="xs:string" use="optional"/>
+										<xs:attribute name="svalue" type="xs:string" use="optional"/>
+										<xs:attribute name="ovalue" type="xs:string" use="optional"/>
+										<xs:attribute name="lvalue" type="xs:string" use="optional"/>
+										<xs:attribute name="cvalue" type="xs:string" use="optional"/>
+										</xs:complexType>
+									</xs:element> 
+									</xs:sequence> 
+									<!--定义该元素属性-->
+									<xs:attribute name="id" type="xs:string" use="required" />
+									<xs:attribute name="actionid" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence> 
+						<!--定义该元素属性-->
+						<xs:attribute name="id" type="xs:string" use="required" />
+						<!--定义该元素属性-->
+						<xs:attribute name="returnid" type="xs:string" use="optional" />
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			
+			<!-- 追加子元素Actions-->
+			<xs:element name="Actions" minOccurs="0" maxOccurs="1">
+				<xs:complexType >
+				<xs:sequence>
+					<!-- 追加子元素action-->
+					<xs:element name="action" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType mixed="true">
+						<xs:sequence> 
+							<!-- 追加子元素dynamic-->
+							<xs:element name="dynamic"  minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<!-- 追加子元素isNotNull-->
+										<xs:element name="isNotNull"  minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType mixed="true">
+												<xs:sequence>
+												</xs:sequence> 
+												<!--定义该元素属性-->
+												<xs:attribute name="property" type="xs:string" use="required" />
+												<xs:attribute name="prepend" type="xs:string" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<!-- 追加子元素isNotEmpty-->
+										<xs:element name="isNotEmpty"  minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType mixed="true">
+												<xs:sequence>
+												</xs:sequence> 
+												<!--定义该元素属性-->
+												<xs:attribute name="property" type="xs:string" use="required" />
+												<xs:attribute name="prepend" type="xs:string" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<!-- 追加子元素bitAnd-->
+										<xs:element name="bitAnd" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素greaterThan-->
+										<xs:element name="greaterThan" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素greaterEqual-->
+										<xs:element name="greaterEqual" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素lessThan-->
+										<xs:element name="lessThan" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素lessEqual-->
+										<xs:element name="lessEqual" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素isEqual-->
+										<xs:element name="isEqual" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素isNotEqual-->
+										<xs:element name="isNotEqual" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素isNotVoid-->
+										<xs:element name="isNotVoid" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence> 
+									<!--定义该元素属性-->
+									<xs:attribute name="prepstart" type="xs:string" use="required" />
+								</xs:complexType>
+							</xs:element>
+							<!-- 追加子元素isNotNull-->
+										<xs:element name="isNotNull"  minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType mixed="true">
+												<xs:sequence>
+												</xs:sequence> 
+												<!--定义该元素属性-->
+												<xs:attribute name="property" type="xs:string" use="required" />
+												<xs:attribute name="prepend" type="xs:string" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<!-- 追加子元素isNotEmpty-->
+										<xs:element name="isNotEmpty"  minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType mixed="true">
+												<xs:sequence>
+												</xs:sequence> 
+												<!--定义该元素属性-->
+												<xs:attribute name="property" type="xs:string" use="required" />
+												<xs:attribute name="prepend" type="xs:string" use="required" />
+											</xs:complexType>
+										</xs:element>
+										<!-- 追加子元素bitAnd-->
+										<xs:element name="bitAnd" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素greaterThan-->
+										<xs:element name="greaterThan" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素greaterEqual-->
+										<xs:element name="greaterEqual" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素lessThan-->
+										<xs:element name="lessThan" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素lessEqual-->
+										<xs:element name="lessEqual" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素isEqual-->
+										<xs:element name="isEqual" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素isNotEqual-->
+										<xs:element name="isNotEqual" minOccurs="0" maxOccurs="unbounded"/>
+										<!-- 追加子元素isNotVoid-->
+										<xs:element name="isNotVoid" minOccurs="0" maxOccurs="unbounded"/>
+									
+						</xs:sequence> 
+						<!--定义该元素属性-->
+						<xs:attribute name="id" type="xs:string" use="required" />
+						<xs:attribute name="class" type="xs:string" use="optional" />
+						<xs:attribute name="method" type="xs:string" use="optional" />
+						<!-- 设置属性type可选项和默认值 -->
+						<xs:attribute name="type" default="selectList" use="optional">
+							<xs:simpleType>
+							 <xs:restriction base="xs:string">
+							    <xs:enumeration value="selectList"/>
+							    <xs:enumeration value="select"/>
+							    <xs:enumeration value="nSelectList"/>
+							    <xs:enumeration value="nSelect"/>
+							    <xs:enumeration value="update"/>
+							    <xs:enumeration value="delete"/>
+							 </xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="column" type="xs:string" use="optional" />
+						<xs:attribute name="limit" type="xs:string" use="optional" />
+						<xs:attribute name="page" type="xs:string" use="optional" />
+						<xs:attribute name="tobean" type="xs:string" use="optional" />
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,3 @@
+Tabbar的close图标及hover时的图标，要放到下面这个目录中
+/common/js/kcb/Tabbar/codebase/imgs/dhx_blue/close.png
+/common/js/kcb/Tabbar/codebase/imgs/dhx_blue/close_hover.png

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree id="0">
+	<item text="客户首页" id="0000" select="1" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/client/index.jsp</userdata>
+	</item>
+	<item text="采购管理" id="0002"  open="1">
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/client/purchase/index.jsp</userdata>
+		<item text="供应商管理" id="00010001"  im0="./client/supplier.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/purchase/client_purchase_supplier.jsp</userdata>
+		</item>
+		<item text="采购单生成" id="00010002" im0="./client/create_purchase.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/purchase/client_purchase_create_list.jsp</userdata>
+		</item>
+		<item text="采购单列表" id="00010003" im0="./client/purchase_list.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/purchase/client_purchase_recent_list.jsp</userdata>
+		</item>
+		<item text="以往采购单" id="00010004" im0="./client/old_purchase_list.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/purchase/client_purchase_old_list.jsp</userdata>
+		</item>
+	</item>
+	<item text="商品库存" id="0003" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/client/stock/index.jsp</userdata>
+		<item text="商品管理" id="31" im0="./client/stock_goods.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/client_stock_goods.jsp</userdata>
+		</item>
+		<item text="库存信息" id="32" im0="./client/stock_inventory.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/client_stock_inventory.jsp</userdata>
+		</item>
+		<item text="盘点结果" id="33" im0="./client/stock_inventoryResult.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/inventoryResult.jsp</userdata>
+		</item>
+		<item text="出库预约" id="34" im0="./client/stock_clientstock.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/clientstock.jsp</userdata>
+		</item>
+	</item>
+	<item text="订单管理" id="0004" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/client/order/index.jsp</userdata>
+		<item text="所有订单" id="41" im0="./client/order_all_list.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/order/show_order_list.jsp?type=0</userdata>
+		</item>
+		<item text="未付款订单" id="42" im0="./client/order_wait_buyer_pay.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/order/show_order_list.jsp?status=WAIT_BUYER_PAY&amp;type=1</userdata>
+		</item>
+		<item text="待发货订单" id="43" im0="./client/order_wait_seller_send_goods.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/order/show_order_list.jsp?status=WAIT_SELLER_SEND_GOODS&amp;type=2&amp;sendorder=0</userdata>
+		</item>
+		<item text="已发货订单" id="44" im0="./client/order_wait_buyer_confirm_goods.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/order/show_order_list.jsp?status=WAIT_SELLER_SEND_GOODS,WAIT_BUYER_CONFIRM_GOODS&amp;type=3&amp;sendorder=1</userdata>
+		</item>
+		
+		<item text="待评价订单" id="45" im0="./client/order_trade_for_comment.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/order/show_order_list.jsp?status=TRADE_FINISHED&amp;sellerrate=0&amp;type=4</userdata>
+		</item>
+		<item text="成功的订单" id="46" im0="./client/order_trade_finished.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/order/show_order_list.jsp?status=TRADE_FINISHED&amp;type=5</userdata>
+		</item>
+		<item text="关闭的订单" id="47" im0="./client/order_closed.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/order/show_order_list.jsp?status=TRADE_CLOSED,TRADE_CLOSED_BY_TAOBAO&amp;type=6</userdata>
+		</item>
+		<item text="退款中订单" id="48" im0="./client/order_no_refund.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/order/show_order_list.jsp?refundstatus=NO_REFUND&amp;type=7</userdata>
+		</item>
+		<item text="退换货订单" id="49" im0="./client/order_return_and_change.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/order/show_order_list.jsp?refundstatus=WAIT_SELLER_AGREE,WAIT_BUYER_RETURN_GOODS,WAIT_SELLER_CONFIRM_GOODS,SELLER_REFUSE_BUYER,TRADE_FINISHED&amp;type=8</userdata>
+		</item>
+	</item>
+	<item text="客户管理" id="0005" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/client/taobao/index.jsp</userdata>
+		<item text="客户列表" id="51" im0="./client/taobao_cclient.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/taobao/cclient.jsp</userdata>
+		</item>
+		<item text="客户关怀" id="52" im0="./client/taobao_cclient_care.png" >
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/taobao/cclient_care.jsp</userdata>
+		</item>
+	</item>
+	<item text="客服绩效" id="0006" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/client/performance/index.jsp</userdata>
+		<item text="绩效" id="61"  im0="./client/taobao_servant.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/supplier.jsp</userdata>
+		</item>
+	</item>
+	<item text="财务管理" id="0007" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/client/finance/index.jsp</userdata>
+		<item text="财务" id="71"  im0="./client/taobao_Finance.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/supplier.jsp</userdata>
+		</item>
+	</item>
+	<item text="系统管理" id="0008" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/client/system/index.jsp</userdata>
+		<item text="系统信息" id="00080001"  im0="./client/system_infotmation .png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/supplier.jsp</userdata>
+		</item>
+		<item text="店铺信息" id="00080002"  im0="./client/system_shop.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/system/system_shop.jsp</userdata>
+		</item>
+		<item text="员工信息" id="00080003"  im0="./client/taobao_staff.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/system/staff_list.jsp</userdata>
+		</item>
+		<item text="权限设置" id="00080004"  im0="./client/taobao_permissions.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/old_purchase_list.jsp</userdata>
+		</item>
+		<item text="模板管理" id="00080005" im0="./client/taobao_expressTempl.png">
+			<userdata name="type">1</userdata>
+			<userdata name="action">/client/system/express_template_manage.jsp</userdata>
+		</item>
+		<item text="店员管理" id="00080006" im0="./client/taobao_relation.png">
+			<userdata name="type">1</userdata>
+			<userdata name="action">/client/system/role_relation.jsp</userdata>
+		</item>
+	</item>
+		<item text="仓库首页" id="0001">
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/store/index.jsp</userdata>
+	</item>
+	<item text="基本信息管理" id="0009" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/store/basic/index.jsp</userdata>
+		<item text="仓储" id="000981"  im0="./store/store_basic_store.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/basic/store_basic_store.jsp</userdata>
+		</item>
+		<item text="货物" id="000982"  im0="./store/store_basic_goods.png" >
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/basic/store_basic_goods.jsp</userdata>
+		</item>
+		<item text="部门" id="000983"  im0="./store/store_basic_department.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/basic/store_basic_department.jsp</userdata>
+		</item>
+		<item text="客户" id="000984"  im0="./store/store_basic_client.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/basic/store_basic_client.jsp</userdata>
+		</item>
+		<item text="物流" id="000985"  im0="./store/store_basic_forward_company.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/basic/store_basic_forward_company.jsp</userdata>
+		</item>
+		<item text="角色" id="000986"  im0="./store/store_basic_role.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/basic/store_basic_role.jsp</userdata>
+		</item>
+		<item text="供应商" id="000987"  im0="./store/store_basic_supplier.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/basic/store_basic_supplier.jsp</userdata>
+		</item>
+	</item>
+	<item text="入库管理" id="0010" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/store/instock/index.jsp</userdata>
+        <item text="入库单管理" id="00100008"  im0="./store/store_instock_count.png" >
+            <userdata name ="type">1</userdata>
+            <userdata name="action">/store/instock/store_instock_manage.jsp</userdata>
+        </item>		
+		<item text="入库预约" id="00100001"  im0="./store/store_instock_order.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/instock/store_instock_order.jsp</userdata>
+		</item>
+		<item text="入库清点" id="00100002"  im0="./store/store_instock_count.png" >
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/instock/store_instock_count.jsp</userdata>
+		</item>
+		<item text="入库检验" id="00100003"  im0="./store/store_instock_check.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/instock/store_instock_check.jsp</userdata>
+		</item>
+		<item text="贴条码" id="00100004"  im0="./store/store_instock_barcode.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/instock/store_instock_barcode.jsp</userdata>
+		</item>
+		<item text="入库上架" id="00100005"  im0="./store/store_instock_stock.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/instock/store_instock_stock.jsp</userdata>
+		</item>	
+		<item text="退换货" id="00100006"  im0="./store/store_instock_return.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/instock/store_instock_return.jsp</userdata>
+		</item>				
+	</item>		
+	<item text="库存管理" id="0011" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/store/stock/index.jsp</userdata>
+		<item text="库存查询" id="001181" im0="./store/store_stock_select.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/stock/store_stock_select.jsp</userdata>
+		</item>
+		<item text="库存调整" id="001182" im0="./store/store_stock_adjust.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/stock/store_stock_adjust.jsp</userdata>
+		</item>
+		<item text="库存冻结" id="001183" im0="./store/store_stock_freeze.png" >
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/stock/store_stock_freeze.jsp</userdata>
+		</item>
+	    <item text="库存移动" id="1001" im0="./store/store_stock_move.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/stock/store_stock_move.jsp</userdata>
+		</item>			
+		<item text="补货管理" id="1002" im0="./store/store_stock_restock.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/stock/store_stock_restock.jsp</userdata>
+		</item>			
+		<item text="数据分析" id="1003" im0="./store/store_stock_dataAnalysis.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/stock/store_stock_dataAnalysis.jsp</userdata>
+		</item>		
+		<item text="库存报表" id="001187" im0="./store/store_stock_form.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/stock/store_stock_form.jsp</userdata>
+		</item>
+		<item text="库存盘点" id="001188" im0="./store/store_stock_inventory.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/stock/store_stock_inventory.jsp</userdata>
+		</item>
+		<item text="在途库存" id="001189" im0="./store/store_stock_stockonway.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/stock/store_stock_stockonway.jsp</userdata>
+		</item>
+	</item>		
+	<item text="出库管理" id="0012" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/store/outstock/index.jsp</userdata>
+		<item text="出库预约" id="120" im0="./store/store_outstock_applyout.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/outstock/store_outstock_applyout.jsp</userdata>
+		</item>
+		<item text="所有出库单" id="130" im0="./store/store_outstock_applyout.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/outstock/store_outstock_manage.jsp</userdata>
+		</item>				
+		<item text="单据处理" id="121" im0="./store/store_outstock_needhandletask.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/outstock/store_outstock_needhandletask.jsp</userdata>
+		</item>
+		<item text="分拣配货" id="122" im0="./store/store_outstock_picking.png" >
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/outstock/store_outstock_picking.jsp</userdata>
+		</item>
+		<item text="质检扫描" id="123" im0="./store/store_outstock_scan.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/outstock/store_outstock_scan.jsp</userdata>
+		</item>
+		<item text="产品包装" id="124" im0="./store/store_outstock_packing.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/outstock/store_outstock_packing.jsp</userdata>
+		</item>
+		<item text="快件交接" id="125" im0="./store/store_outstock_handover.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/outstock/store_outstock_handover.jsp</userdata>
+		</item>	
+		<item text="发货跟踪" id="126" im0="./store/store_outstock_kuaidi.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/outstock/store_outstock_kuaidi.jsp</userdata>
+		</item>	
+		<!-- 
+		<item text="采购退货" id="127">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/outstock/store_outstock_needhandletask.jsp</userdata>
+		</item>	
+		 -->
+		<item text="报废处理" id="128" im0="./store/store_outstock_scrap.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/outstock/store_outstock_scrap.jsp</userdata>
+		</item>	
+		<item text="次品库" id="129" im0="./store/store_outstock_defective.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/store/outstock/store_outstock_defective.jsp</userdata>
+		</item>											
+	</item>	
+	<item text="绩效考核-员工考核" id="0013" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/client/stock/index.jsp</userdata>
+		<item text="系统信息" id="81" im0="./store/store_system_info.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/supplier.jsp</userdata>
+		</item>
+		<item text="店铺信息" id="82"  im0="./store/store_system_shop.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/system/system_shop.jsp</userdata>
+		</item>
+		<item text="员工信息" id="83" im0="./store/store_staff.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/purchase_list.jsp</userdata>
+		</item>
+		<item text="权限设置" id="84" im0="./store/store_permission.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/old_purchase_list.jsp</userdata>
+		</item>
+	</item>		
+	<item text="客户服务-收费系统" id="0014" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/store/server/index.jsp</userdata>
+		<item text="系统信息" id="81" im0="./store/store_permission.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/supplier.jsp</userdata>
+		</item>
+		<item text="店铺信息" id="82"  im0="./store/store_permission.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/system/system_shop.jsp</userdata>
+		</item>
+		<item text="员工信息" id="83" im0="./store/store_permission.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/purchase_list.jsp</userdata>
+		</item>
+		<item text="权限设置" id="84" im0="./store/store_permission.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/old_purchase_list.jsp</userdata>
+		</item>
+	</item>			
+	<item text="供应商-处理采购" id="0015" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/supplier/purchase/supplier_purchase_deal.jsp</userdata>
+		<item text="系统信息" id="81" im0="./store/store_permission.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/purchase/supplier.jsp</userdata>
+		</item>
+		<item text="店铺信息" id="82"  im0="./store/store_permission.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/system/system_shop.jsp</userdata>
+		</item>
+		<item text="员工信息" id="83" im0="./store/store_permission.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/purchase_list.jsp</userdata>
+		</item>
+		<item text="权限设置" id="84" im0="./store/store_permission.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/old_purchase_list.jsp</userdata>
+		</item>
+	</item>	
+	<item text="快递管理-基本信息" id="0016" >
+		<userdata name ="type">1</userdata>
+		<userdata name="action">/client/stock/index.jsp</userdata>
+		<item text="系统信息" id="00160001" im0="./store/store_permission.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/supplier.jsp</userdata>
+		</item>
+		<item text="店铺信息" id="00160002"  im0="./store/store_permission.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/system/system_shop.jsp</userdata>
+		</item>
+		<item text="员工信息" id="83" im0="./store/store_permission.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/purchase_list.jsp</userdata>
+		</item>
+		<item text="权限设置" id="84" im0="./store/store_permission.png">
+			<userdata name ="type">1</userdata>
+			<userdata name="action">/client/stock/old_purchase_list.jsp</userdata>
+		</item>
+		</item>
+
+
+</tree>

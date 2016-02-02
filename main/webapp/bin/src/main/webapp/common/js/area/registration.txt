@@ -1,0 +1,524 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+<META   HTTP-EQUIV="Pragma"   CONTENT="no-cache">    
+<META   HTTP-EQUIV="Cache-Control"   CONTENT="no-cache">    
+<META   HTTP-EQUIV="Expires"   CONTENT="0"> 
+        <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+        <title>杭州金安易软件有限公司</title>
+        <link rel="STYLESHEET" type="text/css" href="/_css/css.css">
+        <script type="text/javascript" src="/company/js/flash.js">
+        </script>
+    </head>
+    <body><div id="boodyzong">
+        <div id="boody">
+                           		<div id="top">
+               <div id="top-1">
+
+<img src="/company/img/top-1.jpg" width="227" height="75" border="0" usemap="#Map" />
+<map name="Map" id="Map"><area shape="rect" coords="77,21,163,67" href="http://www.kingyi.net" />
+</map>                </div>
+                <div id="top-2">
+                </div>
+                <div id="top-3">
+                    <div id="shousuo">
+	   <table width="176" border="0" cellspacing="0" cellpadding="0">
+         <tr>
+           <td width="84" height="20" align="right">　</td>
+           <td width="34" align="center" class="shousuozi"><!--a href="/home/index.dot" class="shousuozi">|首页</a--></td>
+           <td width="58" height="20" background="#" class="shousuozi"><a href="/home/index.dot">|首页|</a></td>
+         </tr>
+         <tr>
+           <td colspan="2"><input name="textfield" type="text" class="txtBox" /></td>
+           <td align="center"><input type="submit" name="go" value="搜 索" class="go" /></td>
+         </tr>
+       </table>
+	 </div>
+                </div>
+            </div>   
+            <div id="nav">
+                <div id="topflash1">
+                    <script language="JavaScript" type="text/javascript">
+                        writeFlashHTML("_swf=/_flash/top5.swf", "_width=913", "_height=143", "_wmode=transparent");
+                    </script>
+                </div>
+                                   		 <div id="navflash1">
+	  <table width="913" height="37" border="0" align="center" cellpadding="0" cellspacing="0">
+         <tr>
+           <td align="center" background="/company/img/top-line.jpg"><a href="/enter/info.dot" class="a5">走进金安易</a></td>
+           <td width="2"></td>
+           <td width="130" align="center" background="/company/img/top-line.jpg"><a href="/news/company.dot" class="a5">新闻中心</a></td>
+           <td width="2"></td>
+           <td width="130" align="center" background="/company/img/top-line.jpg"><a href="/solve/application.dot" class="a5">解决方案</a></td>
+           <td width="2"></td>
+           <td width="130" align="center" background="/company/img/top-line.jpg"><a href="/product/" class="a5">产品中心</a></td>
+           <td width="2"></td>
+           <td width="130" align="center" background="/company/img/top-line.jpg"><a href="/service/summary/index.dot" class="a5">服务中心</a></td>
+           <td width="2"></td>
+           <td width="130" align="center" background="/company/img/top-line.jpg"><a href="/contact/index.dot" class="a5">联系我们</a></td>
+           <td width="2"></td>
+           <td width="130" align="center" background="/company/img/top-line.jpg"><a href="/count/index.dot" class="a5">统计平台</a></td>
+         </tr>
+      </table>
+	  <table width="176" height="26" border="0" align="center" cellpadding="0" cellspacing="0">
+         <tr>
+           <td colspan="2" align="left">　</td>
+         </tr>
+      </table>
+	  </div>   
+            </div>
+            <div id="main">
+                   		
+
+
+	
+		   
+			         				      
+
+
+
+
+
+
+
+       
+	
+
+
+<div id="lift">
+    <div id="liftnav">
+        <h2><img src="/company/img/lift-nav5.jpg" width="191" height="36" /></h2>
+        <div id="liftnavul">
+<br>				<div class="siteMap"> 
+	  		  <ul>
+	<li id="summary">
+<a href="/service/summary/">服务概述</a>
+<ul>
+<li><a href="/service/summary/index.dot">    服务理念</a></li>
+<li><a href="/service/summary/system.dot">    服务体系</a></li>
+</ul>
+</li>
+	<li id="support">
+<a href="/service/support/">服务支持</a>
+<ul>
+<li><a href="/service/support/index.dot">服务向导</a></li>
+<li><a href="/service/support/deployment+.dot">远程支持</a></li>
+<li><a href="/service/support/free_service.dot">现场支持</a></li>
+<li><a href="/service/support/charge_service.dot">培训支持</a></li>
+</ul>
+</li>
+	<li id="faq">
+<a href="/service/faq/">常见问题解答</a>
+<ul>
+<li><a href="/service/faq/index.dot">单机版</a></li>
+<li><a href="/service/faq/system_integration.dot">财务集成系统</a></li>
+<li><a href="/service/faq/oper_mana.dot">《金安易农村经营管理系统Ｖ1.0》</a></li>
+</ul>
+</li>
+<li><a href="/service/olservice.dot">
+提问留言板</a></li>
+	<li id="down">
+<a href="/service/down/">下载中心</a>
+<ul>
+<li><a href="/service/down/index.dot">应用程序</a></li>
+<li><a href="/service/down/driver.dot">相关驱动程序</a></li>
+<li><a href="/service/down/annual_report.dot">升级程序</a></li>
+<li><a href="/service/down/demo.dot">演示版</a></li>
+</ul>
+</li>
+<li><a href="/service/statement.dot">
+用户注册</a></li>
+</ul>	  	
+	</div>
+	
+	
+        </div>
+    </div>
+</div>
+<div id="right">
+    <div id="rightmain">
+        <h2>
+            <div id="dqymmc">
+                用户注册
+            </div>
+            <p class="mainbt">
+                用户注册&lt;&lt; 用户注册 
+            </p>
+        </h2><h6>
+
+              <!-- SCRIPT FOR AJAX MANAGEMENT -->
+<script language="javascript" type="text/javascript" src='/html/js/states_and_countries.js'>
+</script>
+<script type='text/javascript' src='/dwr/engine.js'>
+</script>
+<script type='text/javascript' src='/dwr/util.js'>
+</script>
+<script type='text/javascript' src='/dwr/util.js'>
+</script>
+<script type="text/javascript" src="/company/js/area.js">
+</script>
+<!-- END SCRIPT FOR AJAX MANAGEMENT -->
+<script language="javascript">
+    var myselect = ["myselect1", "myselect2", "myselect3"];
+    var opt0 = ["省份", "地级市", "市、县级市、县"];
+    //Submit the form
+    function submitForm(){
+		var dwjb = document.getElementById("dwjb");
+		if(document.getElementById(myselect[0]).selectedIndex==0){
+			dwjb.value = null;
+		}else{
+			dwjb.value = "";
+		 for (i = 0; i < myselect.length; i++) 
+		 dwjb.value += document.getElementById(myselect[i]).value;
+		}
+        var ele = document.getElementById("dotRegistrationForm");
+        ele.submit();
+    }
+    
+    function forgotPassword(){
+        var form = document.getElementById("dotRegistrationForm");
+        form.action = "/dotCMS/addRegistration?dispatch=forgotPassword";
+        form.submit();
+    }
+    
+    function cancel(){
+        window.location = "/";
+        
+    }
+    
+    function changeStateTextLayer(){
+        var state = document.getElementById("state").value;
+        if (state == "otherCountry") {
+            showLayer("stateTextDiv");
+            document.getElementById("stateOtherCountryText").focus();
+        }
+        else {
+            document.getElementById("stateOtherCountryText").value = "";
+            hideLayer("stateTextDiv");
+        }
+    }
+    
+    //Layer Management Variables
+    styleReference = "style.";
+    visibleLayer = "inline";
+    browser = "Explorer";
+    
+    //Layer Management
+    function referenceLayer(layerName){
+        return "document.getElementById('" + layerName + "').";
+    }
+    
+    function hideLayer(layerName){
+        eval(referenceLayer(layerName) + styleReference + 'display="none"');
+    }
+    
+    function showLayer(layerName){
+        eval(referenceLayer(layerName) + styleReference + 'display="' + visibleLayer + '"');
+    }
+    
+    function change(layer){
+        var layerInstance = document.getElementById(layer);
+        if (layerInstance.style.display == 'none') {
+            showLayer(layer);
+        }
+        else {
+            hideLayer(layer);
+        }
+        return false;
+    }
+    
+    
+    
+    
+    function passFieldChanged(){
+        var ele = document.getElementById("dotRegistrationForm");
+        ele.passChanged.value = "true";
+    }
+    
+    
+    function trim(str){
+        return str.replace(/^\s*|\s*$/g, "");
+    }
+    
+    function Trim(TRIM_VALUE){
+        if (TRIM_VALUE.length < 1) {
+            return "";
+        }
+        TRIM_VALUE = RTrim(TRIM_VALUE);
+        TRIM_VALUE = LTrim(TRIM_VALUE);
+        if (TRIM_VALUE == "") {
+            return "";
+        }
+        else {
+            return TRIM_VALUE;
+        }
+    }
+    
+    function RTrim(VALUE){
+        var w_space = String.fromCharCode(32);
+        var v_length = VALUE.length;
+        var strTemp = "";
+        if (v_length < 0) {
+            return "";
+        }
+        var iTemp = v_length - 1;
+        
+        while (iTemp > -1) {
+            if (VALUE.charAt(iTemp) == w_space) {
+            }
+            else {
+                strTemp = VALUE.substring(0, iTemp + 1);
+                break;
+            }
+            iTemp = iTemp - 1;
+            
+        }
+        return strTemp;
+    }
+    
+    function LTrim(VALUE){
+        var w_space = String.fromCharCode(32);
+        if (v_length < 1) {
+            return "";
+        }
+        var v_length = VALUE.length;
+        var strTemp = "";
+        
+        var iTemp = 0;
+        
+        while (iTemp < v_length) {
+            if (VALUE.charAt(iTemp) == w_space) {
+            }
+            else {
+                strTemp = VALUE.substring(iTemp, v_length);
+                break;
+            }
+            iTemp = iTemp + 1;
+        }
+        return strTemp;
+    }
+</script>
+<div id="hyzc" align="center">
+    用户信息
+</div>
+<div id="hyzcwz">
+    <div id="hyzcwz1">
+        <ul>
+        </ul>
+        <form action="/dotCMS/addRegistration" method="post" name="dotRegistrationForm" id="dotRegistrationForm" autocomplete="off">
+            <input type="hidden" name="referrer" value=""><input type="hidden" name="from" value=""><input type="hidden" name="noOrganization" value="false"><input type="hidden" name="userID" value=""><input type="hidden" name="extUserInode" value=""><input type="hidden" name="userProxyInode" value=""><input type="hidden" name="dispatch" value="saveRegistration" id="dispatch"><input type="hidden" name="passChanged" value=""><input type="hidden" name="addressID" value="">
+            <div id="hidden_div">
+                <input tabindex="19" style="display:inline;float:none;" type="radio" checked="true" name="description" value="work"   id="descriptionWork" />
+                <label for="descriptionWork" style="display:inline;float:none;">
+                    Work Address
+                </label>
+                <input tabindex="20" style="display:inline;float:none;" type="radio" name="description" value="home"   id="descriptionHome" />
+                <label for="descriptionHome" style="display:inline;float:none;">
+                    Home Address
+                </label>
+                <script language="javascript">
+                    writeCountriesSelect('country', 'China Peoples Republic Of');
+                </script>
+            </div>
+            <script language="javascript">
+                document.getElementById("hidden_div").style.visibility = "hidden";
+            </script>
+            <ul>
+                <li>
+                    会员注册名：
+                </li>
+                <li>
+                    <input type="text" name="emailAddress" class="txtBox2" value=""><span class="fwzxcjzi3">＊</span>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <div id="hyzckg">
+                    </div>
+                </li>
+                <li>
+                    (4-20位 请使用英文(a-z，A-Z)，数字(0－9)建议与单位名相关)
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    请输入密码：
+                </li>
+                <li>
+                    <input type="password" maxlength="20" class="txtBox2" onchange="passFieldChanged()" name="password" value=""><span class="fwzxcjzi3">＊</span>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <div id="hyzckg">
+                    </div>
+                </li>
+                <li>
+                    (6-20位 请使用英文(a-z，A-Z)，数字(0－9))
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    再输入密码：
+                </li>
+                <li>
+                    <input type="password" maxlength="20" class="txtBox2" onchange="passFieldChanged()" name="verifyPassword" value=""><span class="fwzxcjzi3">＊</span>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    注册人姓名：
+                </li>
+                <li>
+                    <input type="text" class="txtBox2" name="firstName" value=""><span class="fwzxcjzi3">＊</span>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    　单位级别：
+                </li>
+                <li>
+                    <input type="hidden" id="dwjb" class="txtBox2" name="state" value="">
+                    <select id="myselect1" name="myselect1">
+                    </select>
+                    <select id="myselect2" name="myselect2">
+                    </select>
+                    <select id="myselect3" name="myselect3">
+                    </select><span class="fwzxcjzi3">＊</span>
+                </li>
+            </ul>
+			<script language="javascript">
+        for (i = 0; i < myselect.length - 1; i++) 
+            document.getElementById(myselect[i]).onchange = new Function("changeSelect(" + (i + 1) + ")");
+        changeSelect(0);
+            </script>
+            <ul>
+                <li>
+                    　乡镇名称：
+                </li>
+                <li>
+                    <input type="text" class="txtBox2" name="street2" value="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    　单位全称：
+                </li>
+                <li>
+                    <input type="text" class="txtBox3" name="city" value=""><span class="fwzxcjzi3">＊</span>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    　详细地址：
+                </li>
+                <li>
+                    <input type="text" class="txtBox3" name="street1" value="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    　联系电话：
+                </li>
+                <li>
+                    <input type="text" class="txtBox2" name="phone" value="">(如:0571-88854889)<span class="fwzxcjzi3">＊</span>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    　　EMAILl：
+                </li>
+                <li>
+                    <input type="text" class="txtBox2" name="lastName" value="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    　　　手机：
+                </li>
+                <li>
+                    <input type="text" class="txtBox2" name="fax" value="">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    　单位邮编：
+                </li>
+                <li>
+                    <input type="text" class="txtBox2" name="zip" value="">
+                </li>
+            </ul>
+            <div id="hyzcwz3">
+                <p align="center">
+                    <input type="button" name="go2" value="下一步" class="zuce" onClick="submitForm()"/>　　　　　　<input type="button" name="go22" value="取 　消" class="zuce" onClick="cancel()"/>
+                </p>
+            </div>
+        </form>
+    </div>
+    <div id="hyzcwz2">
+        <ul>
+                                                                                </ul>
+    </div>
+</div>
+
+  </h6>
+ </div>
+</div>
+
+
+   
+            </div>               		 <div id="foot" align="center">
+                <ul>
+		 <li>
+                        <a href="/home/">首页</a>|
+                    </li>
+                    <li>
+                        <a href="/enter/info.dot">走进金安易</a>|
+                    </li>
+                    <li>
+                        <a href="/news/company.dot">新闻中心</a>|
+                    </li>
+                    <li>
+                        <a href="/solve/application.dot">解决方案</a>|
+                    </li>
+                    <li>
+                        <a href="/product/index.dot">产品中心</a>|
+                    </li>
+                    <li>
+                        <a href="/service/summary/index.dot">服务中心</a>|
+                    </li>
+<li>
+                        <a href="/contact/index.dot">联系我们</a>|
+                    </li>
+
+		<li>
+                        <a href="/count/index.dot"  class="dt">统计平台</a>|
+                    </li>
+
+			<li><a href="http://www.kingyi.net:6080">E-mail邮箱</a></li>
+                    <!--li>
+                        <a href="#">网站地图</a>|
+                    </li-->
+
+                </ul>
+<p class="design"><a href="http://www.miibeian.gov.cn/" target='_blank'>浙ICP备05072479号</a> 金安易软件有限公司  版权所有 © 2009
+</p>
+<p class="wangjing"><img src="/_img/system/gangting.gif" width="47" height="47" border="0" usemap="#Map2" />
+<map name="Map2" id="Map2">
+  <area shape="rect" coords="2,2,44,50" href="http://www.pingpinganan.gov.cn/web/index.aspx" />
+</map><img src="/_img/system/pingp.gif" width="43" height="43" border="0" usemap="#Map2Map" />
+<map name="Map2Map" id="Map2Map">
+  <area shape="rect" coords="2,-2,44,46" href="http://www.pingpinganan.gov.cn/web/index.aspx" />
+</map>
+<img src="/_img/system/anan.gif" width="43" height="43" border="0" usemap="#Map2Map2" />
+<map name="Map2Map2" id="Map2Map2">
+  <area shape="rect" coords="2,0,44,48" href="http://www.pingpinganan.gov.cn/web/index.aspx" />
+</map>
+
+</p>
+</div>
+              
+        </div>  </div>
+
+    </body>
+</html>

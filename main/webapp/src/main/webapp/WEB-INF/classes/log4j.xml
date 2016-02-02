@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration PUBLIC "-//LOG4J//DTD CONFIGURATION//EN" "http://logging.apache.org/log4j/docs/api/org/apache/log4j/xml/log4j.dtd">
+<log4j:configuration debug="true" xmlns:log4j="http://jakarta.apache.org/log4j/">
+  <appender name="A1" class="org.apache.log4j.ConsoleAppender">
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%5p [%d{HH:mm:ss}] (%F:%L): - %m%n" />
+    </layout>
+  </appender>
+
+  <appender name="A2" class="org.apache.log4j.DailyRollingFileAppender">
+    <param name="File" value="F:\\ywplog\jjjg.log" />
+    <param name="DatePattern" value="'_'yyyyMMdd-HH'.log'" />
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%d - %-5p %x - %m - %c -%-4r [%t] %n" />
+    </layout>
+  </appender>
+
+
+
+  <appender name="LOG.USER" class="org.apache.log4j.DailyRollingFileAppender">  
+    <param name="File" value="d:\\logs\\LOG_USER.log" />  
+    <param name="DatePattern" value="'_'yyyyMMdd-HH'.log'" />
+    <param name="Append" value="true"/> 
+    <layout class="org.apache.log4j.PatternLayout">  
+      <param name="ConversionPattern" value="%d - %-5p %x - %m - %c -%-4r [%t] %n" />
+    </layout>
+    <filter class="com.kcb.common.log4j.UserLogFilter">     
+      <param name="LevelMin" value="20050" />     
+      <param name="LevelMax" value="20050" />     
+    </filter>    
+  </appender>
+  
+  
+  <logger name="org.hibernate.SQL">
+    <level value="INFO" />
+  </logger>
+
+<!-- 
+  <logger name="org.hibernate.tool.hbm2ddl">
+    <level value="DEBUG" />
+  </logger>
+
+  <logger name="org.hibernate.pretty">
+    <level value="DEBUG" />
+  </logger>
+
+  <logger name="org.hibernate.transaction">
+    <level value="DEBUG" />
+  </logger>
+ 
+  <logger name="org.hibernate.cache">
+    <level value="INFO" />
+  </logger>
+ -->
+  <logger name="corg.hibernate.hql.AST">
+    <level value="INFO" />
+  </logger>
+  
+<!-- 
+<logger name="org.hibernate.type">
+    <level value="debug" />
+  </logger>
+   -->
+  <logger name="com.kingyi">
+    <level value="INFO" />
+  </logger>
+  
+  <root>
+    <level value="DEBUG" />
+    <appender-ref ref="A1" />
+    <appender-ref ref="A2" />
+    <appender-ref ref="LOG.USER" />
+  </root>
+</log4j:configuration>

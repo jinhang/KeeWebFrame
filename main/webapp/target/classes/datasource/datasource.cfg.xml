@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!-- bean id="dataSource1" class="com.atomikos.jdbc.SimpleDataSourceBean">
+        <property name="uniqueResourceName"><value>33</value></property>
+        <property name="xaDataSourceClassName"><value>org.postgresql.xa.PGXADataSource</value></property>
+        <property name="xaDataSourceProperties">
+            <value>databaseName=${database};serverName=${ip};portNumber=5432;user=root;password=chenjian</value>
+        </property>
+        <property name="exclusiveConnectionMode"><value>true</value></property>   
+        <property name="connectionPoolSize"><value>3</value></property>   
+        <property name="validatingQuery"><value>SELECT 1</value></property>
+    </bean>
+    
+    <bean id="sessionFactory1"
+        class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource">
+            <ref bean="dataSource1" />
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.dialect">${sqldialect}</prop>
+            </props>
+        </property>
+        <property name="configLocation" value="classpath:cluster/hibernate.cfg.xml" />
+    </bean>
+    
+    <bean id="dataSource2" class="com.atomikos.jdbc.SimpleDataSourceBean">
+        <property name="uniqueResourceName"><value>32</value></property>
+        <property name="xaDataSourceClassName"><value>org.postgresql.xa.PGXADataSource</value></property>
+        <property name="xaDataSourceProperties">
+            <value>databaseName=rrp2;serverName=192.168.0.253;portNumber=5432;user=root;password=chenjian</value>
+        </property>
+        <property name="exclusiveConnectionMode"><value>true</value></property>   
+        <property name="connectionPoolSize"><value>3</value></property>   
+        <property name="validatingQuery"><value>SELECT 1</value></property>
+    </bean>
+    <bean id="sessionFactory2"
+        class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource">
+            <ref bean="dataSource2" />
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.dialect">${sqldialect}</prop>
+            </props>
+        </property>
+        <property name="configLocation" value="classpath:cluster/hibernate.cfg.xml" />
+    </bean> 
+    
+    <bean id="jdbcDAO2" class="com.kingyi.engine.wrapper.domain.impl.WrapperImpl">
+            <property name="key" value="32">
+        </property>
+            <property name="sessionFactory">
+                <ref bean="sessionFactory2" />
+            </property>
+        </bean>
+    
+    
+    
+    
+    <bean id="atomikosTransactionManager" class="com.atomikos.icatch.jta.UserTransactionManager" init-method="init" destroy-method="close"> 
+        <property name="forceShutdown"><value>true</value></property> 
+    </bean>
+    
+    <bean id="atomikosUserTransaction" class="com.atomikos.icatch.jta.UserTransactionImp"> 
+        <property name="transactionTimeout"><value>300</value></property> 
+    </bean> 
+    <bean id="hibernateTransactionManager" class="org.springframework.transaction.jta.JtaTransactionManager">
+        <property name="transactionManager">
+            <ref local="atomikosTransactionManager"/>
+        </property>
+        <property name="userTransaction">
+            <ref local="atomikosUserTransaction"/>
+        </property>
+    </bean>
+    <bean id="IWorkFlowTask1" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+        <property name="transactionManager">
+            <ref local="hibernateTransactionManager"/>
+        </property>
+        <property name="target">
+            <ref local="workFlowTask"/>
+        </property>
+        <property name="transactionAttributes">
+            <props>
+                <prop key="*">PROPAGATION_REQUIRED,-Exception</prop>
+            </props>
+        </property>
+    </bean>
+    -->
+    <bean id="jdbcDAO1" class="com.wfos.engine.wrapper.domain.impl.WrapperImpl">
+        <property name="key" value="33">
+        </property>
+        <property name="sessionFactory">
+            <ref bean="SessionFactory" />
+        </property>
+    </bean>
+
+        
+    
+
+    <bean id="workFlowTask" class="com.wfos.engine.workflow.WorkFlowTask">
+        <property name="wrapperList">
+            <list>
+                <ref bean="jdbcDAO1" />
+                <!-- ref bean="jdbcDAO2" /> -->
+            </list>
+        </property>
+    </bean>
+    
+    
+
+    <bean id="transactionManager"
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory">
+            <ref bean="SessionFactory" />
+        </property>
+    </bean>
+
+
+<bean id="IWorkFlowTask"
+   class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+   <property name="target">
+            <ref local="workFlowTask"/>
+        </property>
+   <property name="transactionManager">
+    <ref bean="transactionManager"/>
+   </property>
+   <property name="transactionAttributes">
+    <props>
+     <prop key="*">PROPAGATION_REQUIRED,-Exception</prop>
+    </props>
+   </property>
+</bean>
+    
+    
+    
+    
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class dynamic-insert="true" dynamic-update="true"
+  name="com.kcb.model.Test" table="test">
+  <id column="id" length="32" name="id" type="string">
+   <generator class="uuid.hex"/>
+  </id>
+  <property column="name" generated="never" lazy="false" length="32"
+   name="name" type="string"/>
+   
+    </class>
+</hibernate-mapping>

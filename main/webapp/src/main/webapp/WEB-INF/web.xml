@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd">
+
+
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml,classpath:spring/quartz-config.xml
+		</param-value>
+	</context-param>
+
+
+
+	<servlet>
+		<servlet-name>context</servlet-name>
+		<servlet-class>
+			org.springframework.web.context.ContextLoaderServlet
+		</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<welcome-file-list>
+		<welcome-file>main/login.jsp</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
+
+	<context-param>
+		<param-name>
+			LIQUIBASE_CHANGELOG
+		</param-name>
+		<param-value>
+	<!--  		kcb.postgres.changelog.xml-->
+			kcb.mysql.changelog.xml
+		</param-value>
+	</context-param>
+	
+	<filter>
+		<description>登录系统Filter</description>
+		<filter-name>loginFilter</filter-name>
+		<filter-class>com.kcb.common.filter.LoginControlFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>loginFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>loginFilter</filter-name>
+		<url-pattern>*.dwr</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>
+			com.wfos.engine.common.LiquibaseServletListener
+		</listener-class>
+	</listener>
+	
+	<servlet>
+		<servlet-name>CXFService</servlet-name>
+		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet
+		</servlet-class>
+	</servlet>
+
+
+
+	<servlet-mapping>
+		<servlet-name>CXFService</servlet-name>
+		<url-pattern>/cxf/*</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet>
+		<servlet-name>dwr-invoker</servlet-name>
+		<servlet-class>
+			org.directwebremoting.servlet.DwrServlet
+			<!-- org.directwebremoting.spring.DwrSpringServlet -->
+		</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		[color=red]
+		<init-param>
+			<description>使用服务器推技术(反转AJAX)</description>
+			<param-name>activeReverseAjaxEnabled</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		[/color]
+		<init-param>
+			<param-name>
+				initApplicationScopeCreatorsAtStartup
+			</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>maxWaitAfterWrite</param-name>
+			<param-value>-1</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/classes/dwr.xml</param-value>
+		</init-param>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+	
+	<distributable />
+</web-app>

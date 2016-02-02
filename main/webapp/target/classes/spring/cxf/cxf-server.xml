@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml"></import>
+
+	
+	<bean id="inMessageInterceptor" class="com.kcb.app.demo.MessageInterceptor">
+		<constructor-arg value="receive" />
+	</bean>
+	<bean id="outLoggingInterceptor" class="org.apache.cxf.interceptor.LoggingOutInterceptor" />
+	
+	
+	<!-- E网配登陆注册 -->
+	<bean id="loginServiceBean" class="com.kcb.app.interfaces.impl.LoginService" />
+	
+	<!-- E网配下单接口 -->
+	<bean id="OnlineOdersServiceBean" class="com.kcb.app.interfaces.impl.OnlineOdersService" />
+	
+	<!-- E网配首页接口 -->
+	<bean id="HomeServiceBean" class="com.kcb.app.interfaces.impl.HomeService" />
+	
+	<!-- E网配我的订单接口 -->
+	<bean id="OrderCenterServiceBean" class="com.kcb.app.interfaces.impl.OrderCenterService" />
+	
+	<!-- E网配我要收单（签收）接口 -->
+	<bean id="SignedOrderServiceBean" class="com.kcb.app.interfaces.impl.SignedOrderService" />
+	
+	<!-- E网配个人中心接口 -->
+	<bean id="UserCenterServiceBean" class="com.kcb.app.interfaces.impl.UserCenterService" />
+	
+	<!-- E网配派件通知接口 -->
+	<bean id="MessageServiceBean" class="com.kcb.app.interfaces.impl.MessageService" />
+	
+	<!-- E网配派件接口 -->
+	<bean id="DeliveryPackageServiceBean" class="com.kcb.app.interfaces.impl.DeliveryPackage" />
+	
+	<!-- E网配派件接口 -->
+	<bean id="TakeOnlineOrderServiceBean" class="com.kcb.app.interfaces.impl.TakeOnlineOrder" />
+	
+	<!-- 注意下面的address，这里的address的名称就是访问的WebService的name -->
+	<jaxws:server id="loginService" serviceClass="com.kcb.app.interfaces.service.ILoginService"
+		address="/Login">
+		<jaxws:serviceBean>
+			<ref bean="loginServiceBean" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="inMessageInterceptor" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<ref bean="outLoggingInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+	
+	<jaxws:server id="OnlineOders" serviceClass="com.kcb.app.interfaces.service.IOnlineOdersService"
+		address="/OnlineOders">
+		<jaxws:serviceBean>
+			<ref bean="OnlineOdersServiceBean" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="inMessageInterceptor" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<ref bean="outLoggingInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+	
+	<jaxws:server id="Home" serviceClass="com.kcb.app.interfaces.service.IHomeService"
+		address="/Home">
+		<jaxws:serviceBean>
+			<ref bean="HomeServiceBean" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="inMessageInterceptor" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<ref bean="outLoggingInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+	
+	<jaxws:server id="OrderCenter" serviceClass="com.kcb.app.interfaces.service.IOrderCenterService"
+		address="/OrderCenter">
+		<jaxws:serviceBean>
+			<ref bean="OrderCenterServiceBean" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="inMessageInterceptor" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<ref bean="outLoggingInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+	
+	
+	<jaxws:server id="SignedOrder" serviceClass="com.kcb.app.interfaces.service.ISignedOrderService"
+		address="/SignedOrder">
+		<jaxws:serviceBean>
+			<ref bean="SignedOrderServiceBean" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="inMessageInterceptor" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<ref bean="outLoggingInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+	
+	<jaxws:server id="UserCenter" serviceClass="com.kcb.app.interfaces.service.IUserCenterService"
+		address="/UserCenter">
+		<jaxws:serviceBean>
+			<ref bean="UserCenterServiceBean" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="inMessageInterceptor" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<ref bean="outLoggingInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+	
+	<jaxws:server id="Message" serviceClass="com.kcb.app.interfaces.service.IMessageService"
+		address="/Message">
+		<jaxws:serviceBean>
+			<ref bean="MessageServiceBean" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="inMessageInterceptor" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<ref bean="outLoggingInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+	
+	
+	<jaxws:server id="DeliveryPackage" serviceClass="com.kcb.app.interfaces.service.IDeliveryPackageService"
+		address="/DeliveryPackage">
+		<jaxws:serviceBean>
+			<ref bean="DeliveryPackageServiceBean" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="inMessageInterceptor" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<ref bean="outLoggingInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>	
+	
+	<jaxws:server id="TakeOnlineOrder" serviceClass="com.kcb.app.interfaces.service.ITakeOnlineOrderService"
+		address="/TakeOnlineOrder">
+		<jaxws:serviceBean>
+			<ref bean="TakeOnlineOrderServiceBean" />
+		</jaxws:serviceBean>
+		<jaxws:inInterceptors>
+			<ref bean="inMessageInterceptor" />
+		</jaxws:inInterceptors>
+		<jaxws:outInterceptors>
+			<ref bean="outLoggingInterceptor" />
+		</jaxws:outInterceptors>
+	</jaxws:server>
+
+</beans>
+

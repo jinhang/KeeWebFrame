@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<TaskConfig>
+	<Tasks>
+		  <task id="getRecordCountById">
+			<step id="1" actionid="getRecordCountById"></step>
+		</task>
+		  <task id="checkUserLogin">
+			<step id="1" actionid="checkUserLogin"></step>
+		</task>
+		  <task id="getExpressByName">
+			<step id="1" actionid="getExpressByName"></step>
+		</task>
+		<task id="userLoginAndGetUserId">
+			<step id="1" actionid="userLoginAndGetUserId"></step>
+		</task>
+		<task id="fetchAddressBySendCode">
+			<step id="1" actionid="fetchAddressBySendCode"></step>
+		</task>
+		<task id="fetchAddressBySendCodeInOutStock">
+			<step id="1" actionid="fetchAddressBySendCodeInOutStock"></step>
+		</task>		
+		
+	</Tasks>
+
+	<!-- *****************action 配置 **************************** -->
+		 
+	<Actions>
+	
+		  <action id="getRecordCountById" type="select">
+			select count(*) from Express as ex where ex.recordman = :name and ex.recordtype = 3 and ex.recordtime <greaterEqual/> :startdate and ex.recordtime <lessThan />  :enddate
+		</action>
+		
+		<action id="checkUserLogin" type="select">
+		 select count(*) from Staff as st where st.username=:name and st.password =:password 
+		</action>
+		<action id="getExpressByName" limit="limit" first="first">
+			select new map(
+			ex.id as id,ex.sendcode as sendcode,ex.recordtime as recordtime,ex.province as province,ex.city as city,ex.district as district)
+			from Express as ex 
+			where ex.recordman=:name and ex.recordtype = 3 order by ex.recordtime desc
+		</action>
+		<action id="userLoginAndGetUserId">
+			select new map(
+			st.id as id) from Staff as st where st.username=:name and st.password =:password
+		</action>
+		<action id="fetchAddressBySendCode">
+			select
+				new map(e.province as province,e.city as city,e.district as district)
+			from Express as e
+			where e.sendcode = :sendCode
+		</action>		
+		<action id="fetchAddressBySendCodeInOutStock">
+			select
+				new map(o.receiverstate as province,o.receivercity as city,o.receiverdistrict as district)
+			from Outstock as o
+			where o.sendcode = :sendCode
+		</action>			
+		
+	</Actions>
+</TaskConfig>

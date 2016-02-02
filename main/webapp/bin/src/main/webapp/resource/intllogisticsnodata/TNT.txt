@@ -1,0 +1,6 @@
+Reference No	Total Package	Total weight	Total value	Length	Width	Height	article Description (not exceed 20 characters)	receiver country code	receiver town	receiver postcode	receiver contact name	receiver tel	receiver company	receiver address (not exceed 90 characters)
+140715105205128 1 20, 500.0 0 0 0  UK receivercity rzip7890 receiver linkman 6540-67-16809864586 null receiver address blablabla 
+140712165505440 2 84.086,84.086, 500.0 0 0 0  UK receivercity rzip7890 receiver linkman 6540-67-16809864586 null receiver address blablabla 
+140708192805593 2 87.084,85.085, 500.0 0 0 0  null receivercity rzip7890 receiver linkman 6540-67-16809864586 null receiver address blablabla 
+140708185540125 2 84.089,84.089, 500.0 0 0 0  null receivercity rzip7890 receiver linkman 6540-67-16809864586 null receiver address blablabla 
+140707100447124 1 5.269, 500.0 0 0 0  UK receivercity rzip7890 receiver linkman 6540-67-16809864586 null receiver address blablabla 

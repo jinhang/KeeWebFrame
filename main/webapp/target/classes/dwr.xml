@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 3.0//EN" "http://getahead.org/dwr/dwr30.dtd">
+ 
+<dwr> 
+ <!-- <init>
+ 自定义的enum converter
+<converter id="enumOrdinal" class="com.kcb.dwrconverter.EnumConverterByOrdinal"/>
+  </init> -->
+ <allow>  
+  <create javascript="DwrGetSession" creator="new">
+       <param name="class" value="com.kcb.common.session.DwrGetSession"></param>
+  </create>
+  <!--  
+  <create creator="spring" javascript="DwrCallServiceSystem">     
+	<param name="beanName" value="DwrCallServiceSystem" />     
+  </create>
+  <create creator="spring" javascript="DwrCallWrapperSystem">     
+	<param name="beanName" value="DwrCallWrapperSystem" />     
+  </create>
+  <create creator="spring" javascript="DwrCallWrapper">     
+	<param name="beanName" value="DwrCallWrapper" />     
+  </create>
+   -->
+  <convert converter="hibernate3" match="com.kcb.model.*"/>
+  <convert converter="hibernate3" match="com.wfos.engine.wrapper.model.Msg"/>
+  <convert converter="hibernate3" match="com.kcb.common.export.*"/>
+   	<convert converter="array" match="[Z"/>
+	<convert converter="array" match="[B"/>
+	<convert converter="array" match="[S"/>
+	<convert converter="array" match="[I"/>
+	<convert converter="array" match="[J"/>
+	<convert converter="array" match="[F"/>
+	<convert converter="array" match="[D"/>
+	<convert converter="array" match="[C"/>
+	<convert converter="array" match="[L*"/>
+	<convert converter="null" match="java.sql.Blob"/>
+	</allow> 
+
+<!-- signatures>
+  <![CDATA[
+  import net.sf.json.JSONArray;
+  import net.sf.json.JSONObject;
+  Check.setConditions(JSONObject<JSONArray>);
+  ]]>
+</signatures> -->
+
+</dwr> 
+
+
+<!-- dwr>   
+    <allow>   
+        <create creator="spring" javascript="inquiryMasterAction">   
+            <param name="class" value="cn.net.cogent.summer.webapp.action.InquiryMasterAction"/>   
+            <param name="beanName" value="inquiryMasterAction"/>   
+            <include method="getDetailsByMasterId"/>   
+        </create>   
+        <convert converter="bean" match="cn.net.cogent.summer.model.InquiryDetail"/>   
+    </allow>   
+</dwr -->  

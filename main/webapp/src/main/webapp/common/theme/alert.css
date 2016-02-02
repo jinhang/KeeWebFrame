@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+.alertBox1{display:inline-block;padding:4px 6px 3px 10px;position:fixed;z-index:1000;left:30%;top:0px;background-color:rgb(196,253,208);zoom:1;}
+.alertBox1 .box1Text{color:#000;display:inline-block;font-family:微软雅黑;cursor:pointer;}
+.alertBox1 .boxCloseButt{background:url("./imgs/theme/popupWindow/noticeClose.png") no-repeat scroll center center transparent;display:inline-block;height:15px;width:13px;margin-left:10px;}
+.alertBox2{position:relative;}
+.alertBox2 .box2Text{padding:10px 15px 0px 15px;height:110px;font-size:13px;line-height:150%;margin:0px;overflow:hidden;}
+.alertBox2 .box2Butt{text-align: right;}
+#alertBoxOk,#alertBoxCancel{padding:3px 12px 3px 12px;border:1px solid #aaa;display:inline-block;margin:0px 10px 0px 5px;cursor:pointer;color:#444;zoom:1;}
+.alertBox2  a:hover{color:#000;}

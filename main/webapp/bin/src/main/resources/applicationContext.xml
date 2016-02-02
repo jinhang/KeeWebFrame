@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd">
+	
+	
+	<import resource="spring/jhs-bean-config.xml"/>
+	<!-- 手机APP -->
+	<import resource="spring/app/dwr-app.xml"/>
+	<!--  
+	<import resource="spring/client/system/dwr-system.xml"/>
+	-->
+	<!--  
+	<import resource="spring/store/sys/dwr-user.xml"/>
+	<import resource="spring/store/sys/dwr-client.xml"/>
+	<import resource="spring/store/sys/dwr-staff.xml"/>
+    -->
+    <import resource="spring/cxf/cxf-server.xml"/>
+	<bean id="Constants" class="com.kcb.common.constant.Constants">
+		<property name="ENABLE_TRANSPORT_DOMAIN">
+			<value>${enable_transport_domain}</value>
+		</property>
+		<property name="TOP_APPKEY">
+			<value>${TOP_APPKEY}</value>
+		</property>
+		<property name="APPSECRET">
+			<value>${APPSECRET}</value>
+		</property>
+		<property name="OPEN_TOP_APPKEY">
+			<value>${OPEN_TOP_APPKEY}</value>
+		</property>
+		<property name="OPEN_APPSECRET">
+			<value>${OPEN_APPSECRET}</value>
+		</property>
+		<property name="IMAGE_PATH">
+			<value>${upload_path}</value>
+		</property>
+		<property name="IMAGE_URL">
+			<value>${upload_url}</value>
+		</property>
+		<property name="REDIRECT_URI">
+			<value>${redirect_uri}</value>
+		</property>
+		<property name="REDIRECT_OPEN_URI">
+			<value>${redirect_open_uri}</value>
+		</property>
+		<property name="FILE_PATH">
+			<value>${file.path}</value>
+		</property>
+		<property name="KCB_BUY_URL">
+			<value>${kcb_buy_url}</value>
+		</property>
+		<property name="LUCENE_PATH">
+			<value>${lucene_path}</value>
+		</property>
+		<property name="EXPORT_URL">
+			<value>${export_url}</value>
+		</property>
+		<property name="STO_IP">
+			<value>${sto_ip}</value>
+		</property>
+		<property name="GTO_URL">
+			<value>${gto_url}</value>
+		</property>
+		<property name="ALIBABA_APPKEY">
+			<value>${alibaba_appkey}</value>
+		</property>
+		<property name="ALIBABA_APPSECRET">
+			<value>${alibaba_appsecret}</value>
+		</property>
+		<property name="JD_APPKEY">
+			<value>${JD_APPKEY}</value>
+		</property>
+		<property name="JD_APPSECRET">
+			<value>${JD_APPSECRET}</value>
+		</property>
+		<property name="JD_CHARSET">
+			<value>${JD_CHARSET}</value>
+		</property>
+		<property name="PP_APPOAUTHID">
+			<value>${pp_appoauthid}</value>
+		</property>
+		<property name="PP_SECRETOAUTHKEY">
+			<value>${pp_secretoauthkey}</value>
+		</property>
+		<property name="TOP_URL">
+			<value>${top_url}</value>
+		</property>
+		<property name="PROXY_TOP_URL">
+			<value>${proxy_top_url}</value>
+		</property>
+		<property name="CACHE_DATASTORE">
+			<value>${cache_datastore}</value>
+		</property>	
+		<property name="ENABLE_DOWNLOADSHOP_DOMAIN">
+			<value>${enable_downloadshop_domain}</value>
+		</property>	
+		<property name="AUTO_TAOBAO_MESSAGESERVER">
+			<value>${auto_taobao_messageserver}</value>
+		</property>
+		<property name="JDP_WSDL">
+			<value>${jdp_wsdl}</value>
+		</property>	
+		<property name="RDS_NAME">
+			<value>${rds_name}</value>
+		</property>		
+		<property name="AUTO_OPEN_RDS">
+			<value>${auto_open_rds}</value>
+		</property>	
+		<property name="ENABLE_AUTO_FETCH_TRACK">
+			<value>${enable_auto_fetch_track}</value>
+		</property>		
+		<property name="HF_APPKEY">
+			<value>${HF_APPKEY}</value>
+		</property>
+		<property name="HF_APPSECRET">
+			<value>${HF_APPSECRET}</value>
+		</property>	
+		<property name="HF_url">
+			<value>${HF_url}</value>
+		</property>	
+		
+		<property name="hf_localfile_url">
+			<value>${hf_localfile_url}</value>
+		</property>	
+		
+		<property name="HF_certificate">
+			<value>${HF_certificate}</value>
+		</property>	
+		
+		<property name="HF_oldsystem_url">
+			<value>${HF_oldsystem_url}</value>
+		</property>	
+		
+		<property name="HF_newsystem_url">
+			<value>${HF_newsystem_url}</value>
+		</property>	
+		
+		<property name="HF_signature_url">
+			<value>${HF_signature_url}</value>
+		</property>		
+		<!-- E网配参数 -->
+		<property name="EWP_LOCAL_URL">
+			<value>${ewp_local_url}</value>
+		</property>		
+		<property name="EWP_PICTURE_URL">
+			<value>${ewp_picture_url}</value>
+		</property>		
+		<property name="EWP_SERVER_AK">
+			<value>${ewp_server_ak}</value>
+		</property>	
+		<property name="EWP_AROUND_RADIUS">
+			<value>${ewp_around_radius}</value>
+		</property>
+		<property name="PUSH_ANDROID_APIKEY">
+			<value>${push_android_apikey}</value>
+		</property>	
+		<property name="PUSH_ANDROID_SECRETKEY">
+			<value>${push_android_secretkey}</value>
+		</property>	
+		<property name="ZM_URL">
+			<value>${zm_url}</value>
+		</property>	
+		<property name="UPLOAD_ZM_DATA">
+			<value>${upload_zm_data}</value>
+		</property>	
+		<property name="PUSH_IOS_APIKEY">
+			<value>${push_ios_apikey}</value>
+		</property>	
+		<property name="PUSH_IOS_SECRETKEY">
+			<value>${push_ios_secretkey}</value>
+		</property>		
+	</bean>
+
+
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+</beans>
