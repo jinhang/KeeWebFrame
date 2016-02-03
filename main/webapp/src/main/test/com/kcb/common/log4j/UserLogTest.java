@@ -3,6 +3,8 @@ package com.kcb.common.log4j;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 
+import com.kee.common.log4j.UserLog;
+
 /**
  * @author jyl
  * @version 创建时间：2012-10-17 上午11:35:27

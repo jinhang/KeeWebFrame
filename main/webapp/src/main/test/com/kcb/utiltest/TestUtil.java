@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.kcb.app.assign.MapApi;
-import com.kcb.app.model.Points;
-import com.wfs.task.Msg;
+import com.kee.app.assign.MapApi;
+import com.kee.app.model.Points;
+import com.kee.task.Msg;
 
 public class TestUtil {
 	

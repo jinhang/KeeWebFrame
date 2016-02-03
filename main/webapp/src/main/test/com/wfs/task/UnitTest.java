@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.kcb.zm.interfaces.UploadOdData;
-import com.wfs.common.jooq.CodeEnum.ScanType;
-import com.wfs.model.tables.pojos.Logisticsdata;
+import com.kee.model.tables.pojos.Logisticsdata;
+import com.kee.task.Msg;
+import com.kee.zm.interfaces.UploadOdData;
+
+import cn.kee.common.jooq.CodeEnum.ScanType;
 public class UnitTest {
 	
 	@Test

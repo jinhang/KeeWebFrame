@@ -24,8 +24,8 @@ import org.junit.Test;
 import com.alibaba.fastjson.JSON;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.utils.SpatialRelationUtil;
-import com.kcb.app.json.model.LocationListJson;
-import com.kcb.app.json.model.MapResultJson;
+import com.kee.app.json.model.LocationListJson;
+import com.kee.app.json.model.MapResultJson;
 
 
 
